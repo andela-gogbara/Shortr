@@ -9,8 +9,13 @@
 <body>
 
 
-  <%= render "welcome/header" %>
 
+  <%= render "welcome/header" %>
+  <% if notice %>
+   <p>
+     Materialize.toast("<%= notice %>", 4000)
+   </p>
+  <% end %>
   <%= yield %>
   <%= render "welcome/footer" %>
 </body>
