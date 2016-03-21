@@ -17,7 +17,7 @@ RSpec.feature "AnonymousHomes", type: :feature do
 
   it "redirects the user" do
     visit("/#{link.short_url}")
-    byebug
+    # byebug
     expect(current_path).to eql "test"
   end
 
