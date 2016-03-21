@@ -1,0 +1,45 @@
+
+<div class="container">
+<h1>Create Account</h1>
+<%= form_for @user do |f|%>
+<div class="row">
+  <% @user.errors.full_messages.each do |message|%>
+  <div class="card-panel">
+    <span class="red-text text-darken-2"><%= message %></span>
+  </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.text_field :name, class: "validate"%>
+    <%= f.label :name%>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.email_field :email, class: "validate"%>
+    <%= f.label :email %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.password_field :password, class: "validate"%>
+    <%= f.label :password %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.password_field :password_confirmation, class: "validate"%>
+    <%= f.label :password_confirmation %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.submit "Create Account" %>
+  </div>
+</div>
+<% end %>
+</div>

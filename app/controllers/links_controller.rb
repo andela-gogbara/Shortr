@@ -20,12 +20,12 @@ class LinksController < ApplicationController
     if params[:short_url]
       @link = Link.find_by(short_url: params[:short_url])
       redirect_to @link.full_url
-      # byebug
     end
   end
 
   def link_params
-    params.require(:link).permit(:full_url, :short_url, :active)
+    params.require(:link).permit(:full_url, :short_url, :active, :user_id)
     # byebug
   end
+
 end
