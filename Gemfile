@@ -40,6 +40,7 @@ group :development, :test do
   gem "spring-commands-cucumber"
   gem "rspec-rails"
   gem "factory_girl_rails"
+  gem "selenium-webdriver"
 end
 
 group :development do

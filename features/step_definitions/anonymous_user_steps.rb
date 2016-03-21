@@ -1,21 +1,22 @@
 Given(/^that I am an anonymous user of the system$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 When(/^I visit the site$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit("/")
 end
 
 When(/^give a URL to the service$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in("link_full_url", :with => "http://www.facebook.com")
+  click_button("Make Shortr")
 end
 
 Then(/^I expect it to return a service shortened URL$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("localhost")
 end
 
 When(/^I follow a service shortened URL$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @link = FactoryGirl.create(:link)
+  click_on(root_url + @link.short_url)
 end
 
 Then(/^I expect to be redirected to the original URL$/) do

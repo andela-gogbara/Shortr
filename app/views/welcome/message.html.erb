@@ -2,15 +2,21 @@
   <div class="background">
       <div class="container center url-container">
             <div class="row s12 m4 l8">
-              <form class="" action="index.html" method="post">
+                <%= form_for @dd do |f| %>
                 <div class="input-field">
-                  <input value="Alvin" id="first_name2" type="text" class="validate">
+                  <!-- <input value="Alvin" name="full_url" id="full_url" type="text" class="validate"> -->
+                  <%= f.text_field :full_url, required: true %>
                 </div>
                 <div class="row">
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Make Shortr
-                  </button>
+                  <!-- <button class="btn waves-effect waves-light" type="submit">Make Shortr
+                  </button> -->
+                  <%= f.submit "Make Shortr ",
+		class: "btn waves-effect waves-light btn-medium brand-bg white-text regular-text" %>
                 </div>
-              </form>
+              <% end %>
+            </div>
+            <div class="row s12 m4 l8 short-url">
+              <a href="<%= flash[:success] %>"><%= flash[:success] %></a>
             </div>
       </div>
   </div>
