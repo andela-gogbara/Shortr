@@ -1,5 +1,14 @@
+
+<div class="container">
 <h1>Create Account</h1>
 <%= form_for @user do |f|%>
+<div class="row">
+  <% @user.errors.full_messages.each do |message|%>
+  <div class="card-panel">
+    <span class="red-text text-darken-2"><%= message %></span>
+  </div>
+  <% end %>
+</div>
 <div class="row">
   <div class="input-field col s12">
     <%= f.text_field :name, class: "validate"%>
@@ -33,3 +42,4 @@
   </div>
 </div>
 <% end %>
+</div>

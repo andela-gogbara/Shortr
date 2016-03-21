@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321090644) do
+ActiveRecord::Schema.define(version: 20160321143413) do
 
   create_table "links", force: :cascade do |t|
     t.string   "full_url"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20160321090644) do
     t.integer  "count",      default: 0
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "user_id"
   end
+
+  add_index "links", ["user_id"], name: "index_links_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +31,9 @@ ActiveRecord::Schema.define(version: 20160321090644) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "link_id"
   end
+
+  add_index "users", ["link_id"], name: "index_users_on_link_id"
 
 end
