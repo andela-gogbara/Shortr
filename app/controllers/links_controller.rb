@@ -20,6 +20,11 @@ class LinksController < ApplicationController
     if params[:short_url]
       @link = Link.find_by(short_url: params[:short_url])
       redirect_to @link.full_url
+    else
+      @link = Link.find(params[:id])
+      respond_to do |format|
+        format.js { render :show_link }
+      end
     end
   end
 
