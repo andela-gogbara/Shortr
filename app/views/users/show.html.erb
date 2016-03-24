@@ -1,9 +1,5 @@
 <h1>User Page</h1>
 <h3><%= @user.name %></h3>
-<% @user.links.each do |link|%>
-  <li><%= link.full_url %></li>
-<% end %>
-
   <div class="row">
     <div class="col l6">
       <ul class="collection">
@@ -23,7 +19,9 @@
     </ul>
     </div>
     <div class="col l6">
+      <%= flash[:update_success] %>
       <div class="row" id="show-link">
+
         <%# render "links/show_link"%>
       </div>
     </div>
