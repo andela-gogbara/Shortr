@@ -80,8 +80,8 @@ end
     if @link.active && @link.deleted == false
       @link.count += 1
       @link.save
-      redirect_to @link.full_url
       @link.statistics.create(get_visit_details)
+      redirect_to @link.full_url
     else
       link_error_message
     end
