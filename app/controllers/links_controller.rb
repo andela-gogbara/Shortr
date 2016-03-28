@@ -36,7 +36,7 @@ end
       new_create_redirect
     else
       @link.save
-      TitleWorker.perform_async(@link.id)
+      # TitleWorker.perform_async(@link.id)
       new_create_redirect
       flash[:success] = root_url + @link.short_url
     end
@@ -78,7 +78,7 @@ end
 
   def check_active_delete
     if @link.active && @link.deleted == false
-      @link.count += 1
+      @link.visit_count += 1
       @link.save
       @link.statistics.create(get_visit_details)
       redirect_to @link.full_url

@@ -8,9 +8,9 @@ class Link < ActiveRecord::Base
     self.short_url = SecureRandom.urlsafe_base64(5)
     end
   end
-  
+
 scope :most_popular, lambda {
-  where(deleted: false).order("count desc").limit(5)
+  where(deleted: false).order("visit_count desc").limit(5)
 }
 
 scope :recent_links, lambda {

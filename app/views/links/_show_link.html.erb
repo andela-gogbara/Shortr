@@ -2,7 +2,7 @@
 <h4><%= link.full_url %></h4>
 <p><a href="<%= root_url + link.short_url %>"><%= root_url + link.short_url %></a></p>
 <p>
-  <%= link.count %>
+  <%= link.visit_count %>
 </p>
 <div class="row">
   <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn"%>
