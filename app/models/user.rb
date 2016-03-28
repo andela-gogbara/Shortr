@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_secure_password
 
   scope :top_users, lambda {
-    User.includes(:links).joins(:links).order("links.count desc").limit(5)  }
+    User.includes(:links).joins(:links).order("links.visit_count desc").limit(5)  }
 end
