@@ -33,9 +33,6 @@ gem "mechanize"
 gem "useragent"
 gem "sidekiq"
 
-
-
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
