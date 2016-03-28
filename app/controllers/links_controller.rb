@@ -78,10 +78,10 @@ end
 
   def check_active_delete
     if @link.active && @link.deleted == false
-      redirect_to @link.full_url
       @link.count += 1
-      @link.statistics.create(get_visit_details)
       @link.save
+      redirect_to @link.full_url
+      @link.statistics.create(get_visit_details)
     else
       link_error_message
     end
