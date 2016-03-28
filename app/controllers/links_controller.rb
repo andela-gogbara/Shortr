@@ -79,7 +79,6 @@ end
   def check_active_delete
     if @link.active && @link.deleted == false
       @link.visit_count += 1
-      byebug
       @link.save
       @link.statistics.create(get_visit_details)
       redirect_to @link.full_url
