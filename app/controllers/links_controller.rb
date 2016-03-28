@@ -78,7 +78,7 @@ end
 
   def check_active_delete
     if @link.active
-      redirect_to @link.full_url
+      redirect_to @link.full_url, status: 302
       @link.visit_count += 1
       @link.statistics.create(get_visit_details)
       @link.save
