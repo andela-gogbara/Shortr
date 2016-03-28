@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328180301) do
+ActiveRecord::Schema.define(version: 20160328205518) do
 
   create_table "links", force: :cascade do |t|
     t.string   "full_url"
