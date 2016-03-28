@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   has_secure_password
+
+  scope :top_users, lambda {
+    User.includes(:links).joins(:links).order("links.count desc").limit(5)  }
 end

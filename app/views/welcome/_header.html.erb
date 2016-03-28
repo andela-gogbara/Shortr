@@ -4,7 +4,8 @@
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
       <% if current_user %>
-      <li><%= link_to "Dashboard", root_path %></li>
+      <li><%= link_to "Dashboard", user_path(current_user) %></li>
+      <li><%= link_to "Create Shortr", "#{links_path}/new", remote:true %></li>
       <li><%= link_to "Logout", logout_path %></li>
       <% else %>
       <li><%= link_to "Sign In", login_path %></li>
