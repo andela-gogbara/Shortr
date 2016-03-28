@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "logout", to: "sessions#destroy", as: "logout"
 
-  get ":short_url", to: "links#show"
+  get ":short_url", to: "links#process_url"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

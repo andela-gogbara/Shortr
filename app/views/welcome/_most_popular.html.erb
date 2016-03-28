@@ -1,0 +1,19 @@
+<div class="card blue-grey darken-1">
+  <div class="card-content white-text">
+    <span class="card-title">Popular URLs</span>
+    <% @most_popular.each do |link| %>
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"><%= link.title%></span>
+        <p><%= link.full_url %></p>
+        <p><%= link.short_url %></p>
+        <p><%= time_ago_in_words(link.created_at) %></p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+    <% end %>
+</div>
+</div>

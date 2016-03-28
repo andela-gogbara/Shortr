@@ -1,18 +1,7 @@
 <div class="parallax-container">
   <div class="background">
       <div class="container center url-container">
-            <div class="row s12 m4 l8">
-                <%= form_for @dd do |f| %>
-                <%= f.hidden_field :user_id, value: link_owner %>
-                <div class="input-field">
-                  <%= f.text_field :full_url, required: true %>
-                </div>
-                <div class="row">
-                  <%= f.submit "Make Shortr ",
-		class: "btn waves-effect waves-light btn-medium brand-bg white-text regular-text" %>
-                </div>
-              <% end %>
-            </div>
+              <%=  render "welcome/home_page_short_form" %>
             <div class="row s12 m4 l8 short-url">
               <a href="<%= flash[:success] %>"><%= flash[:success] %></a>
             </div>
@@ -23,58 +12,16 @@
 
 <div class="row">
   <div class="col s12 m6 l4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Popular URLs</span>
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-    </div>
-  </div>
+    <%= render "welcome/most_popular" %>
 </div>
 
   <div class="col s12 m6 l4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Recent URLs</span>
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-    </div>
-  </div>
+    <%= render "welcome/recent_links" %>
 </div>
 
 
   <div class="col s12 m6 l4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Top Users</span>
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-    </div>
-  </div>
+    <%= render "welcome/top_users" %>
 </div>
 
 
