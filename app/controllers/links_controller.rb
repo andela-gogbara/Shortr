@@ -36,7 +36,7 @@ end
       new_create_redirect
     else
       @link.save
-      TitleWorker.perform_async(@link.id)
+      # TitleWorker.perform_async(@link.id)
       new_create_redirect
       flash[:success] = root_url + @link.short_url
     end
