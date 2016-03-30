@@ -1,7 +1,7 @@
 class Link < ActiveRecord::Base
   belongs_to :user
   has_many :statistics
-  validates :full_url, presence: true
+  validates :full_url, presence: true, url: true
   before_create :link_shortener
   def link_shortener
     if self.short_url.nil? || self.short_url.eql?("")
