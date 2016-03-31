@@ -1,6 +1,11 @@
 require "rails_helper"
 
 describe "Statistics", js: true do
+  after(:all) do
+    Link.destroy_all
+    User.destroy_all
+  end
+
   it "allow anonymous users to see list of influential users" do
     visit root_path
     expect(page).to have_content("Top Users")
@@ -21,7 +26,6 @@ describe "Statistics", js: true do
   it "allow current user to see stats about each link visit" do
     login_helper
 
-    click_link("Dashboard")
     click_link(page.all(".collection-item")[0].find("span").text)
     # click_link ("Visit Link")
 
