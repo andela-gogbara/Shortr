@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328205518) do
+ActiveRecord::Schema.define(version: 20160331184539) do
 
   create_table "links", force: :cascade do |t|
     t.string   "full_url"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160328205518) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "link_id"
+    t.string   "api_key"
   end
 
   add_index "users", ["link_id"], name: "index_users_on_link_id"

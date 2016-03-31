@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "logout", to: "sessions#destroy", as: "logout"
 
+  get "api_key", to: "users#show_api", as: "api_key"
+
   get ":short_url", to: "links#process_url"
 
 
