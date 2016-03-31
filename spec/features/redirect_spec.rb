@@ -1,6 +1,6 @@
 require "rails_helper"
 
-descrbe "Redirect after link editing" do
+describe "Redirect after link editing" do
   it "can accept new vanity string when editing" do
       signup_helper
       create_new_short
