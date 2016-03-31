@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "Redirect after link editing" do
   it "can accept new vanity string when editing" do
+    pending
       signup_helper
       create_new_short
       click_link(page.all(".collection-item")[0].find("span").text)
