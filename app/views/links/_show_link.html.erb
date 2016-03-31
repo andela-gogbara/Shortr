@@ -1,13 +1,35 @@
 <h4><%= link.title%></h4>
 <h4><%= link.full_url %></h4>
 <p><a href="<%= root_url + link.short_url %>"><%= root_url + link.short_url %></a></p>
-<p>
-  <%= link.visit_count %>
-</p>
+<p><%= link.visit_count %></p>
 <div class="row">
   <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn"%>
   <%= link_to "DELETE", link_path(link), method: :delete, class: "waves-effect waves-light btn"%>
-  <a class="waves-effect waves-light btn">Stuff</a>
-  <a class="waves-effect waves-light btn">Stuff</a>
+  <a href="<%= root_url + link.short_url %>" id= "visit-link" class="waves-effect waves-light btn">Visit Link</a>
   <a class="waves-effect waves-light btn">Stuff</a>
 </div>
+<table class="stripped">
+
+  <thead>
+    <tr>
+        <th data-field="id">S/N</th>
+        <th data-field="name">IP Address</th>
+        <th data-field="price">Browser</th>
+        <th data-field="price">OS</th>
+        <!-- <th data-field="price">Referer</th> -->
+        <th data-field="price">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% link.statistics.each_with_index do |stat, index| %>
+    <tr>
+      <td><%= index %></td>
+      <td><%= stat.ip %></td>
+      <td><%= stat.browser %></td>
+      <td><%= stat.os %></td>
+      <td><%# stat.referer %></td>
+      <td><%= time_ago_in_words(stat.created_at) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,8 +1,10 @@
 class Link < ActiveRecord::Base
   belongs_to :user
-  has_many :statistics
-  validates :full_url, presence: true, url: true
+  has_many :statistics, dependent: :destroy
+  validates :full_url, presence: true
+  # validates :short_url, presence: true
   before_create :link_shortener
+
   def link_shortener
     if self.short_url.nil? || self.short_url.eql?("")
     self.short_url = SecureRandom.urlsafe_base64(5)
