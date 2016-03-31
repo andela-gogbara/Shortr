@@ -3,6 +3,6 @@ FactoryGirl.define do
     full_url "http://www.facebook.com"
     short_url "shortr"
     active true
-    count 0
+    visit_count 0
   end
 end

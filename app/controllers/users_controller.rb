@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url,
+      session[:user_id] = @user.id
+      redirect_to user_path(current_user),
       notice: "Registration successful"
     else
       render "new"
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user)
+    @user = User.find(params[:id])
   end
 
   def user_params

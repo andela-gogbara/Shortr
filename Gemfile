@@ -45,6 +45,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "selenium-webdriver"
   gem 'sqlite3'
+  gem 'pry'
 end
 
 group :production do
@@ -64,4 +65,8 @@ group :test do
   gem "capybara"
   gem "cucumber-rails", require: false
   gem "database_cleaner"
+  gem "shoulda-matchers", require: false
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
+gem "simplecov", require: false, group: :test

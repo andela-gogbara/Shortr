@@ -9,17 +9,27 @@ RSpec.feature "AnonymousHomes", type: :feature do
   it "returns shorten url" do
     visit("/")
     fill_in("link_full_url", :with => "facebook.com")
-    # byebug
     click_button("Make Shortr")
 
-    expect(page).to have_content("localhost")
+    expect(page).to have_content("127.0.0.1")
   end
 
-  it "redirects the user" do
-    visit("/#{link.short_url}")
-    # byebug
-    expect(current_path).to eql "test"
-  end
+
+  it "displays sections for popular links" do
+      visit root_path
+      expect(page).to have_content("Popular Links")
+    end
+
+    it "displays sections for recent links" do
+      visit root_path
+      expect(page).to have_content("Recent Links")
+    end
+
+    it "displays sections for influential users" do
+      visit root_path
+      expect(page).to have_content("Top Users")
+    end
+
 
   after :all do
     Capybara.default_driver
