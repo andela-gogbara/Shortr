@@ -4,7 +4,7 @@
     <div class="input-field">
       <%= f.text_field :full_url, pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", required: true %>
       <%= f.text_field :short_url, required: true %>
-      <div class="row">
+      <div class="row activity">
         <%= f.radio_button :active, true, id: "true" %>
         <%= f.label :active, "Active", for: "true", class: 'active-text' %>
         <%= f.radio_button :active,  false, id: "false" %>

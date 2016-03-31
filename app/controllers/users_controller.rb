@@ -7,8 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(current_user),
-      notice: "Registration successful"
+      flash[:success] = "Registration successful"
+      redirect_to user_path(current_user)
     else
       render "new"
     end
@@ -18,7 +18,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def show_api
+    @user = User.find(current_user)
+    respond_to do |format|
+      format.js { render :api_key }
+    end
+  end
+
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :api_key)
   end
 end

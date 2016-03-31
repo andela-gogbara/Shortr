@@ -1,10 +1,13 @@
 <div class="navbar-fixed">
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
+    <a href="<%= root_path %>" class="brand-logo">Logo</a>
     <ul class="right">
-      <% if current_user %>
+      <% if current_user && request.path == "/" %>
       <li><%= link_to "Dashboard", user_path(current_user) %></li>
+      <li><%= link_to "Logout", logout_path %></li>
+      <% elsif current_user %>
+      <li><%= link_to "API KEY", api_key_path, remote: true %></li>
       <li><%= link_to "Create Shortr", "#{links_path}/new", remote:true %></li>
       <li><%= link_to "Logout", logout_path %></li>
       <% else %>

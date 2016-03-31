@@ -19,7 +19,7 @@ class LinksController < ApplicationController
     return if check_short_uniqueness
   @link = Link.find(params[:id])
   if @link.update_attributes(link_params)
-    flash[:error] = "Success Update"
+    flash[:error] = "Updated Successfully"
     redirect_to current_user
   else
     render 'edit'
@@ -57,7 +57,7 @@ end
       @link = Link.find(params[:id])
       @link.deleted = true
       @link.save
-      flash[:success] = "Delete Success"
+      flash[:success] = "Deleted Successfully"
       redirect_to current_user
     end
 
