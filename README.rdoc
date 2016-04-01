@@ -25,8 +25,6 @@ Sidekiq is used to handle background tasks, see https://github.com/mperham/sidek
 
         $ git clone https://github.com/andela-gogbara/Shortr
 
-2. Then run the following command to install gem dependencies:
-
         $ bundle install
 
 3. Then run the following command to set up the database:
