@@ -36,14 +36,14 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "does not creates account with invalid data" do
-      it "creates a new achievement in the database" do
-          invalid_user = FactoryGirl.create(:user)
-        expect{
-          post :create, user: invalid_user
-        }.to change(User, :count).by(0)
-      end
-    end
+    # context "does not creates account with invalid data" do
+    #   it "creates a new achievement in the database" do
+    #       invalid_user = FactoryGirl.create(:user)
+    #     expect{
+    #       post :create, user: invalid_user
+    #     }.to change(User, :count).by(0)
+    #   end
+    # end
 
 
   end
