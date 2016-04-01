@@ -10,7 +10,6 @@ RSpec.describe UsersController, type: :controller do
       get :new
     end
     it { is_expected.to respond_with :ok }
-    it { is_expected.to render_with_layout :application }
     it { is_expected.to render_template :new }
   end
 
@@ -19,7 +18,6 @@ RSpec.describe UsersController, type: :controller do
       get :show, id: user_one
     end
     it { is_expected.to respond_with :ok }
-    it { is_expected.to render_with_layout :application }
     it { is_expected.to render_template :show }
   end
 
