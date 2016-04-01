@@ -5,7 +5,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :short_url
       t.boolean :active
       t.integer :count
-      
+
       t.timestamps null: false
     end
   end

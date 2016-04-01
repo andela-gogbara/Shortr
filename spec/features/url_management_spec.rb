@@ -15,7 +15,6 @@ describe "URL Management", js: true do
     expect(page).to have_content("Updated Successfully")
   end
 
-
   it "allows registered users to edit their delete their links" do
     login_helper
     click_link(page.all(".collection-item")[0].find("span").text)
@@ -25,5 +24,4 @@ describe "URL Management", js: true do
     click_link("Visit Link")
     expect(page).to have_content("Link has been deleted by owner")
   end
-
 end

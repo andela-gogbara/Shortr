@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "Welcome back"
       redirect_to user_path(current_user)
-      else
-        flash[:error] = "Invalid Email or Password"
-        render "new"
+    else
+      flash[:error] = "Invalid Email or Password"
+      render "new"
     end
   end
 

@@ -1,7 +1,7 @@
 <div class="navbar-fixed">
 <nav>
   <div class="nav-wrapper">
-    <a href="<%= root_path %>" class="brand-logo">Logo</a>
+    <a href="<%= root_path %>" class="brand-logo">Shortr</a>
     <ul class="right">
       <% if current_user && request.path == "/" %>
       <li><%= link_to "Dashboard", user_path(current_user) %></li>

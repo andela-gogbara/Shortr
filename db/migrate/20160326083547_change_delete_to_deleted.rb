@@ -3,7 +3,7 @@ class ChangeDeleteToDeleted < ActiveRecord::Migration
     rename_column :links, :delete, :deleted
 end
 
-def down
+  def down
     rename_column :links, :deleted, :delete
-end
+  end
 end
