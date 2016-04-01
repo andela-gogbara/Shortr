@@ -6,7 +6,7 @@ When(/^I visit the site$/) do
 end
 
 When(/^give a URL to the service$/) do
-  fill_in("link_full_url", :with => "http://www.facebook.com")
+  fill_in("link_full_url", with: "http://www.facebook.com")
   click_button("Make Shortr")
 end
 

@@ -1,10 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe UsersController, type: :controller do
   after(:all) do
     User.destroy_all
   end
-  let(:user_one) { FactoryGirl.create(:user, name: "test", email: "tes@test.com", password: "test")}
+  let(:user_one) { FactoryGirl.create(:user, name: "test", email: "tes@test.com", password: "test") }
   describe "new account creation" do
     before do
       get :new
@@ -22,7 +22,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST create" do
-    let(:new_user) { FactoryGirl.attributes_for(:user)}
+    let(:new_user) { FactoryGirl.attributes_for(:user) }
     # it "redirects user" do
     #   post :create, new_user: FactoryGirl.attributes_for(:user)
     #   expect(response).to redirect_to(user_path(assigns[:new_user]))
@@ -30,9 +30,9 @@ RSpec.describe UsersController, type: :controller do
 
     context "creates account with valid data" do
       it "creates a new achievement in the database" do
-        expect{
+        expect do
           post :create, user: new_user
-        }.to change(User, :count).by(1)
+        end.to change(User, :count).by(1)
       end
     end
 
@@ -44,7 +44,5 @@ RSpec.describe UsersController, type: :controller do
     #     }.to change(User, :count).by(0)
     #   end
     # end
-
-
   end
 end

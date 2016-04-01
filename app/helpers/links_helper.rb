@@ -1,11 +1,6 @@
 module LinksHelper
-
   def link_owner
-    if current_user
-      current_user.id
-    else
-      nil
-    end
+    current_user.id if current_user
   end
 
   def check_short_uniqueness
@@ -32,13 +27,13 @@ module LinksHelper
   end
 
   def check_active?
-      flash[:error] = "Link made inactive by owner",
-      new_create_redirect
+    flash[:error] = "Link made inactive by owner",
+                    new_create_redirect
   end
 
   def check_deleted?
-      flash[:error] = "Link has been deleted by owner"
-      new_create_redirect
+    flash[:error] = "Link has been deleted by owner"
+    new_create_redirect
   end
 
   def new_create_redirect

@@ -1,12 +1,11 @@
-<h4><%= link.title%></h4>
-<h4><%= link.full_url %></h4>
+<h5><%= link.title%></h5>
+<p><%= link.full_url %></p>
 <p><a href="<%= root_url + link.short_url %>"><%= root_url + link.short_url %></a></p>
-<p><%= link.visit_count %></p>
+<p>Visits Count: <%= link.visit_count %></p>
 <div class="row">
   <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn"%>
   <%= link_to "DELETE", link_path(link), method: :delete, class: "waves-effect waves-light btn"%>
   <a href="<%= root_url + link.short_url %>" id= "visit-link" class="waves-effect waves-light btn">Visit Link</a>
-  <a class="waves-effect waves-light btn">Stuff</a>
 </div>
 <table class="stripped">
 
