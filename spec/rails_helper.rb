@@ -10,6 +10,8 @@ require "capybara/rspec"
 require "capybara/rails"
 require "database_cleaner"
 require "shoulda/matchers"
+# require "transactional_capybara/rspec"
+
 
 
 RSpec.configure do |config|

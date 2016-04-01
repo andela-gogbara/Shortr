@@ -3,5 +3,6 @@ FactoryGirl.define do
     name "MyString"
     email "MyString"
     password "MyString"
+    api_key "testkey"
   end
 end

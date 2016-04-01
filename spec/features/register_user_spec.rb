@@ -1,19 +1,18 @@
 require "rails_helper"
 
 describe "Registered Users", js: true do
-  after :each do
-  User.destroy_all
+  after(:all) do
+    Link.destroy_all
+    User.destroy_all
   end
 
-  it "can register users" do
+  it "allows users to create account" do
       signup_helper
-      expect(page).to have_content("Test")
+      expect(page).to have_content("Registration successful")
   end
 
   it "can create a new short with vanity string" do
       login_helper
-
-      click_link("Dashboard")
 
       create_new_short
 
@@ -22,8 +21,6 @@ describe "Registered Users", js: true do
 
     it "list links by current user" do
       login_helper
-
-      click_link("Dashboard")
 
       expect(page).to have_content("Shortr Links")
     end

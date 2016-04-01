@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe LinksController, type: :controller do
+RSpec.describe LinksController, type: :controller, js: true do
 
   describe "GET new" do
     before do

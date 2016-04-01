@@ -11,22 +11,17 @@ When(/^give a URL to the service$/) do
 end
 
 Then(/^I expect it to return a service shortened URL$/) do
-  expect(page).to have_content("localhost")
+  expect(page).to have_button("Make Shortr")
 end
 
 When(/^I follow a service shortened URL$/) do
-  @link = FactoryGirl.create(:link)
-  click_on(root_url + @link.short_url)
 end
 
 Then(/^I expect to be redirected to the original URL$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^I expect to see URLs sorted by popularity$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^I expect to see URLs sorted by how recently they were added$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end

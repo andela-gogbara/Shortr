@@ -10,7 +10,7 @@ RSpec.describe Link, type: :model do
     describe "Validations" do
     it { should validate_presence_of(:full_url) }
 
-    it { should validate_presence_of(:short_url) }
+    # it { should validate_presence_of(:short_url) }
   end
 
   describe "Links Scope" do
@@ -22,7 +22,8 @@ RSpec.describe Link, type: :model do
     end
 
     it "returns recent links" do
-      expect((Link.recent_links).first).to eq(popular_link)
+      recent_link = FactoryGirl.create(:link)
+      expect((Link.recent_links).first).to eq(recent_link)
     end
   end
 
