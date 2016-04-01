@@ -3,4 +3,4 @@ machine:
     version: 2.3.0
 test:
   override:
-    - bundle exec rake spec
+    - CODECLIMATE_REPO_TOKEN=084506afc1916f6a69bb0b862683a7e398da08ff85bed6f0fe05907f6f75da55 bundle exec rake spec
