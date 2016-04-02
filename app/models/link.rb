@@ -2,7 +2,6 @@ class Link < ActiveRecord::Base
   belongs_to :user
   has_many :statistics, dependent: :destroy
   validates :full_url, presence: true
-  # validates :short_url, presence: true
   before_create :link_shortener
 
   def link_shortener
