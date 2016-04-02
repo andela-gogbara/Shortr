@@ -16,7 +16,7 @@ class LinksController < ApplicationController
   end
 
   def update
-    return if check_short_uniqueness
+    return if check_short_uniqueness_update
     @link = Link.find(params[:id])
     if @link.update_attributes(link_params)
       flash[:error] = "Updated Successfully"
@@ -28,9 +28,10 @@ end
 
   def create
     @link = Link.new(link_params)
-    return if check_short_uniqueness
+    return if check_short_uniqueness_create
     @link.save
     # TitleWorker.perform_async(@link.id)
+    # TODO: Add correct flash message
     flash[:success] = root_url + @link.short_url
     new_create_redirect
   end

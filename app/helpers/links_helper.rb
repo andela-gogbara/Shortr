@@ -3,11 +3,23 @@ module LinksHelper
     current_user.id if current_user
   end
 
-  def check_short_uniqueness
+  def check_short_uniqueness_update
+    @link = Link.find(params[:id])
+    if check_short_uniqueness_update?
+      flash[:error] = "Link already taken"
+      new_create_redirect
+    end
+  end
+
+  def check_short_uniqueness_create
     if Link.find_by(short_url: params[:link][:short_url])
       flash[:error] = "Link already taken"
       new_create_redirect
     end
+  end
+
+  def check_short_uniqueness_update?
+    @link.short_url != params[:link][:short_url] && Link.find_by(short_url: params[:link][:short_url])
   end
 
   def check_active_delete

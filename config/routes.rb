@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :links
   resources :sessions
 
+  namespace :api do
+    resources :links, only: [:create, :update]
+  end
+
   get "/", to: 'welcome#message', as: "root"
 
   get "signup", to: 'users#new', as: "signup"
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
   get "logout", to: 'sessions#destroy', as: "logout"
 
   get "api_key", to: 'users#show_api', as: "api_key"
+
 
   get ":short_url", to: 'links#process_url'
 end
