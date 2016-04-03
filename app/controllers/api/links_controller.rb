@@ -3,7 +3,7 @@ module Api
       include LinksHelper
     respond_to :json
     before_action :validate_url, only: [:update, :create]
-    before_action :authenticate_user_with_token!, only: [:update]
+    # before_action :authenticate_user_with_token!, only: [:update]
 
     def index
       @links = Link.all
