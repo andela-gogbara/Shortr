@@ -2,8 +2,8 @@ module Api
   class LinksController < ApplicationController
       include LinksHelper
     respond_to :json
-    before_action :validate_url
-    before_action :authenticate_user_with_token!
+    before_action :validate_url, only: [:update, :create]
+    before_action :authenticate_user_with_token!, only: [:update]
 
     def index
       @links = Link.all
