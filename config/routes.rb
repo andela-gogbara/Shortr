@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   namespace :api do
-    resources :links, only: [:create, :update]
+    resources :links
   end
 
   get "/", to: 'welcome#message', as: "root"
