@@ -9,8 +9,6 @@ RSpec.describe Link, type: :model do
 
   describe "Validations" do
     it { should validate_presence_of(:full_url) }
-
-    # it { should validate_presence_of(:short_url) }
   end
 
   describe "Links Scope" do
