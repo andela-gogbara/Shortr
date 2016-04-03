@@ -20,12 +20,13 @@ module Api
     end
 
     def update
-      unless @link = Link.find_by(short_url: params[:old]) && !Link.find_by(short_url: params[:link][:short_url])
+      # binding.pry
+      unless Link.find_by(short_url: params[:link][:old]) && !Link.find_by(short_url: params[:link][:short_url])
         process_action_callback(500, "Could not edit content", "")
       else
-      link = Link.find_by(short_url: params[:old])
+      link = Link.find_by(short_url: params[:link][:old])
       link.update(update_params)
-      process_action_callback(201, "Successfully created edit short", link.short_url)
+      process_action_callback(201, "Successfully edited your short", link.short_url)
     end
   end
 
