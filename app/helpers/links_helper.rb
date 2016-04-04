@@ -39,8 +39,8 @@ module LinksHelper
   end
 
   def check_active?
-    flash[:error] = "Link made inactive by owner",
-                    new_create_redirect
+    flash[:error] = "Link made inactive by owner"
+    new_create_redirect
   end
 
   def check_deleted?

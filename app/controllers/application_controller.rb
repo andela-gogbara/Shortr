@@ -18,7 +18,7 @@ protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format ==
   end
 
   def current_user_with_token
-    @api_user = User.find_by(api_key: params[:api_key]) if params[:api_key]
+    @api_user = User.find_by(api_key: params[:link][:api_key]) if params[:link][:api_key]
   end
 
   helper_method :current_user_with_token

@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   include LinksHelper
+  before_action :authenticate_user!, only: [:edit, :destroy]
 
   def new
     @link = Link.new
@@ -21,17 +22,15 @@ class LinksController < ApplicationController
     if @link.update_attributes(link_params)
       flash[:success] = "Updated Successfully"
       redirect_to current_user
-    else
-      render "edit"
     end
 end
 
   def create
+    # binding.pry
     @link = Link.new(link_params)
-    # return if check_short_uniqueness_create
+    return if check_short_uniqueness_create
     @link.save
     # TitleWorker.perform_async(@link.id)
-    # TODO: Add correct flash message
     flash[:success] = root_url + @link.short_url
     new_create_redirect
   end

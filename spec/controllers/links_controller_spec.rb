@@ -1,8 +1,12 @@
 require "rails_helper"
 
 RSpec.describe LinksController, type: :controller, js: true do
-  subject{ FactoryGirl.create(:link)}
+  before(:all) do
+    @link = FactoryGirl.create(:link)
+  end
   let(:user) { FactoryGirl.create(:user)}
+
+after(:all) { DatabaseCleaner.clean_with(:truncation) }
 
   describe "GET new" do
     before do
@@ -12,8 +16,11 @@ RSpec.describe LinksController, type: :controller, js: true do
   end
 
   describe "GET edit" do
+    before(:each) do
+      session[:user_id] = user.id
+    end
     before do
-      xhr :get, :edit, id: subject, format: :js
+      xhr :get, :edit, id: @link, format: :js
     end
     it { is_expected.to render_template "links/edit_short_form" }
   end
@@ -24,17 +31,17 @@ RSpec.describe LinksController, type: :controller, js: true do
     end
 
     before do
-      post :create, link: FactoryGirl.attributes_for(:link)
+      post :create, link: FactoryGirl.attributes_for(:link, short_url: "plus")
     end
 
     it "increase link count by 1" do
       expect{
-        post :create, link: FactoryGirl.attributes_for(:link)
+        post :create, link: FactoryGirl.attributes_for(:link, short_url: "tested")
       }.to change(Link, :count).by(1)
     end
 
     it "it should set flash message" do
-      expect(flash[:success]).to eq("http://test.host/shortr")
+      expect(flash[:success]).to eq("http://test.host/plus")
     end
 
   context "when user is signed in" do
@@ -44,8 +51,6 @@ RSpec.describe LinksController, type: :controller, js: true do
     end
     it { is_expected.to redirect_to(user_path(user)) }
   end
-
-
   end
 
   describe "PUT update" do
@@ -56,7 +61,7 @@ RSpec.describe LinksController, type: :controller, js: true do
     context "with valid data" do
       let(:valid_data) { FactoryGirl.attributes_for(:link, full_url: "full_url", short_url: "short_url") }
       before do
-        put :update, id: subject, link: valid_data
+        put :update, id: @link, link: valid_data
       end
       it { is_expected.to redirect_to(user_path(user))}
       it "it is expected to set flash message" do
@@ -67,7 +72,7 @@ RSpec.describe LinksController, type: :controller, js: true do
 
   describe "GET show" do
     before do
-      xhr :get, :show, id: subject, format: :js
+      xhr :get, :show, id: @link, format: :js
     end
     it { is_expected.to render_template "links/show_link" }
   end

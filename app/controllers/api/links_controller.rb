@@ -2,13 +2,13 @@ module Api
   class LinksController < ApplicationController
       include LinksHelper
     respond_to :json
-    before_action :validate_url, only: [:update, :create]
-    # before_action :authenticate_user_with_token!, only: [:update]
+    before_action :validate_url, only: [:create]
+    before_action :authenticate_user_with_token!, only: [:update]
 
-    def index
-      @links = Link.all
-      respond_with @links
-    end
+    # def index
+    #   @links = Link.all
+    #   respond_with @links
+    # end
 
     def create
       unless @link = Link.find_by(short_url: params[:link][:short_url])
@@ -30,10 +30,10 @@ module Api
     end
   end
 
-    def most_popular
-      @most_popular = Link.most_popular
-      respond_with @most_popular
-    end
+    # def most_popular
+    #   @most_popular = Link.most_popular
+    #   respond_with @most_popular
+    # end
 
 private
     def link_params
