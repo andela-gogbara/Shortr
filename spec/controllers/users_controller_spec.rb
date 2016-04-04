@@ -4,6 +4,8 @@ RSpec.describe UsersController, type: :controller do
   after(:all) do
     User.destroy_all
   end
+  after(:all) { DatabaseCleaner.clean_with(:truncation) }
+
   let(:user_one) { FactoryGirl.create(:user, name: "test", email: "tes@test.com", password: "test") }
   describe "new account creation" do
     before do
@@ -23,10 +25,6 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST create" do
     let(:new_user) { FactoryGirl.attributes_for(:user) }
-    # it "redirects user" do
-    #   post :create, new_user: FactoryGirl.attributes_for(:user)
-    #   expect(response).to redirect_to(user_path(assigns[:new_user]))
-    # end
 
     context "creates account with valid data" do
       it "creates a new achievement in the database" do
@@ -36,13 +34,31 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    # context "does not creates account with invalid data" do
-    #   it "creates a new achievement in the database" do
-    #       invalid_user = FactoryGirl.create(:user)
-    #     expect{
-    #       post :create, user: invalid_user
-    #     }.to change(User, :count).by(0)
-    #   end
-    # end
+    context "does not creates account with invalid data" do
+      before do
+        invalid_user = FactoryGirl.attributes_for(:user, email: "")
+        post :create, user: invalid_user
+      end
+
+      it "creates a new achievement in the database" do
+        expect{
+        }.to change(User, :count).by(0)
+      end
+
+      it "renders new template" do
+        expect(response).to render_template(:new)
+      end
+    end
   end
+
+   describe "#show_api" do
+     before do
+       session[:user_id] = user_one.id
+     end
+     it "assigns an api key to new users" do
+       xhr :get, :show_api, id: user_one, format: :js
+       expect(response).to render_template("users/api_key")
+     end
+   end
+
 end

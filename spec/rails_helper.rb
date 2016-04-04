@@ -10,6 +10,7 @@ require "capybara/rspec"
 require "capybara/rails"
 require "database_cleaner"
 require "shoulda/matchers"
+require "support/request_helpers"
 # require "transactional_capybara/rspec"
 
 RSpec.configure do |config|
@@ -20,6 +21,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.include FactoryGirl::Syntax::Methods
   config.include Shortr::Test::Helpers
+  config.include Requests::JsonHelpers
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
