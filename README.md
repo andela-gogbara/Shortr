@@ -1,3 +1,9 @@
+[![Coverage Status](https://coveralls.io/repos/github/andela-gogbara/Shortr/badge.svg?branch=master)](https://coveralls.io/github/andela-gogbara/Shortr?branch=master)
+
+[![Code Climate](https://codeclimate.com/github/andela-gogbara/Shortr/badges/gpa.svg)](https://codeclimate.com/github/andela-gogbara/Shortr)
+
+[![Circle CI](https://circleci.com/gh/andela-gogbara/Shortr.svg?style=svg)](https://circleci.com/gh/andela-gogbara/Shortr)
+
 # Shortr
 
 Shotr tries to replicate the bitlink link shortener service.

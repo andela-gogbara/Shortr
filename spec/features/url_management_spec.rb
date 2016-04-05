@@ -22,11 +22,6 @@ describe "URL Management", js: true do
     end
 
 
-    it "should show error message if short already exist" do
-      create_new_short("http://example.com", "short")
-      expect(page).to have_content("Link already taken")
-    end
-
     it "should prevent users from updating with string that already exist" do
       click_link(page.all(".collection-item")[0].find("span").text)
       click_link("EDIT")
