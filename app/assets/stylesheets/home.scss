@@ -1,5 +1,5 @@
 .background {
-  // background: url("http://i.imgur.com/Y7syDEa.jpg");
+  background: url("http://bit.ly/1Ma7Dzv");
   background-size: cover;
   min-height: 100%;
   height: auto;
@@ -8,6 +8,71 @@
 .url-container {
   margin-top: 200px
 }
+
+.header {
+  background: white;
+}
+
+.brand-logo {
+  left: 20px !important;
+}
+
+// .menu-items {
+//   margin-right: 20px;
+// }
+
+.page-footer {
+  background: #1F3F50 !important;
+}
+
+.footer-copyright {
+  background: #0e3042 !important;
+}
+
+.sub-card {
+  background: #7c96a4;
+  color: black !important;
+}
+
+.main-card {
+  background: #345b70;
+}
+.login-text {
+    font-size: 1.9em;
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+    text-align: center;
+    color: #0e3042;
+    font-size: 45px;
+    font-weight: bolder;
+    font-family: Gabriola;
+}
+.btn, .btn-large {
+    text-decoration: none;
+    color: #fff;
+    background-color: #345b70;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+nav ul a {
+  font-size: 1rem;
+  color: #000;
+  display: block;
+  margin-top: -60px;
+  margin-left: 10px;
+  margin-right: 14px;
+}
+.edit-info{
+    margin-top: 10px;
+    background: #345b70;
+    color: #fff;
+    padding: 20px;
+}
+
+// .body-container {
+//   background: #F1F1F1 none repeat scroll 0 0;
+// }
 //
 // .input-field {
 //   background: red;

@@ -1,19 +1,21 @@
 <h5><%= @user.name  %> Shortr Links </h5>
   <div class="row">
     <div class="col l6">
-
-      <ul class="collection">
-  <% @user.links.each do |link|%>
-     <li class="collection-item avatar">
-       <span class="title"><%= link_to link.title, link_path(link), remote: true%></span>
-       <p><%= link.full_url %><br>
-          <%= root_url + link.short_url %>
-          <p>Visits Count: <%= link.visit_count %></p>
-       </p>
-       <p class="secondary-content"><%= time_ago_in_words(link.created_at)%></p>
-     </li>
-<% end %>
-</ul>
+<div class="short-list">
+  <ul class="collection">
+    <% @user.links.each do |link|%>
+    <li class="collection-item avatar">
+      <span class="title"><%= link_to "View Details", link_path(link), remote: true%></span>
+      <p><strong>Original Link: </strong><%= link.full_url %><br>
+        <strong>Shortr Link: </strong><%= root_url + link.short_url %>
+        <p><strong>Clicks: </strong><%= link.visit_count %></p>
+        <p><strong>Status: </strong><%= link.active %></p>
+      </p>
+      <p class="secondary-content"><%= time_ago_in_words(link.created_at)%></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
     </div>
     <div class="col l6">
       <div class="row" id="show-link">

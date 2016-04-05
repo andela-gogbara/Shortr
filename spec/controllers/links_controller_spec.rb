@@ -4,9 +4,9 @@ RSpec.describe LinksController, type: :controller, js: true do
   before(:all) do
     @link = FactoryGirl.create(:link)
   end
-  let(:user) { FactoryGirl.create(:user)}
+  let(:user) { FactoryGirl.create(:user) }
 
-after(:all) { DatabaseCleaner.clean_with(:truncation) }
+  after(:all) { DatabaseCleaner.clean_with(:truncation) }
 
   describe "GET new" do
     before do
@@ -35,22 +35,21 @@ after(:all) { DatabaseCleaner.clean_with(:truncation) }
     end
 
     it "increase link count by 1" do
-      expect{
+      expect do
         post :create, link: FactoryGirl.attributes_for(:link, short_url: "tested")
-      }.to change(Link, :count).by(1)
+      end.to change(Link, :count).by(1)
     end
 
     it "it should set flash message" do
       expect(flash[:success]).to eq("http://test.host/plus")
     end
 
-  context "when user is signed in" do
-
-    it "is expected user will be redirect to user profile page" do
-      expect(response).to redirect_to(user_path(user))
+    context "when user is signed in" do
+      it "is expected user will be redirect to user profile page" do
+        expect(response).to redirect_to(user_path(user))
+      end
+      it { is_expected.to redirect_to(user_path(user)) }
     end
-    it { is_expected.to redirect_to(user_path(user)) }
-  end
   end
 
   describe "PUT update" do
@@ -63,7 +62,7 @@ after(:all) { DatabaseCleaner.clean_with(:truncation) }
       before do
         put :update, id: @link, link: valid_data
       end
-      it { is_expected.to redirect_to(user_path(user))}
+      it { is_expected.to redirect_to(user_path(user)) }
       it "it is expected to set flash message" do
         expect(flash[:success]).to eq("Updated Successfully")
       end

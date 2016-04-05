@@ -1,12 +1,12 @@
-<div class="parallax-container">
-  <div class="background">
+
+  <div class="fullbody">
       <div class="container center url-container">
               <%=  render "welcome/home_page_short_form" %>
             <div class="row s12 m4 l8 short-url">
               <a href="<%= flash[:success] %>"><%= flash[:success] %></a>
             </div>
       </div>
-  </div>
+
 
 </div>
 
@@ -23,6 +23,4 @@
   <div class="col s12 m6 l4">
     <%= render "welcome/top_users" %>
 </div>
-
-
-</div>
+  </div>

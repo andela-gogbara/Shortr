@@ -10,7 +10,7 @@ describe "User Registration", js: true do
       signup_helper("James Longo", "test1@test.com", "test")
     end
     it "should show user a welcome message" do
-    expect(page).to have_content("Registration successful")
+      expect(page).to have_content("Registration successful")
     end
   end
 

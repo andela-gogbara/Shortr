@@ -39,13 +39,13 @@ describe Api::LinksController do
       end
 
       it "should increase user link count" do
-        expect((@user.links).count).to eq(2)
+        expect(@user.links.count).to eq(2)
       end
     end
 
     context "link to shorten no valid" do
       before do
-        post :create, link: {full_url: "http:facebook.com"}, format: :json
+        post :create, link: { full_url: "http:facebook.com" }, format: :json
         create_request("http:facebook.com")
       end
 
@@ -56,7 +56,7 @@ describe Api::LinksController do
 
     context "Vanity string already exist" do
       before do
-        post :create, link: { full_url: "http://facebook.com", short_url: "short", api_key: @user.api_key  }, format: :json
+        post :create, link: { full_url: "http://facebook.com", short_url: "short", api_key: @user.api_key }, format: :json
       end
       it "should show error message if vanity exist" do
         expect(json["status_info"]).to eq("Could not create new short")

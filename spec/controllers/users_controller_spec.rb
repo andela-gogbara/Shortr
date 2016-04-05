@@ -41,8 +41,8 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "creates a new achievement in the database" do
-        expect{
-        }.to change(User, :count).by(0)
+        expect do
+        end.to change(User, :count).by(0)
       end
 
       it "renders new template" do
@@ -51,14 +51,13 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-   describe "#show_api" do
-     before do
-       session[:user_id] = user_one.id
-     end
-     it "assigns an api key to new users" do
-       xhr :get, :show_api, id: user_one, format: :js
-       expect(response).to render_template("users/api_key")
-     end
-   end
-
+  describe "#show_api" do
+    before do
+      session[:user_id] = user_one.id
+    end
+    it "assigns an api key to new users" do
+      xhr :get, :show_api, id: user_one, format: :js
+      expect(response).to render_template("users/api_key")
+    end
+  end
 end

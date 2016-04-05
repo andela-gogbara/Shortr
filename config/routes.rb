@@ -17,6 +17,5 @@ Rails.application.routes.draw do
 
   get "api_key", to: 'users#show_api', as: "api_key"
 
-
   get ":short_url", to: 'links#process_url'
 end

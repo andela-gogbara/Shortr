@@ -19,7 +19,8 @@ module LinksHelper
   end
 
   def check_short_uniqueness_update?
-    @link.short_url != params[:link][:short_url] && Link.find_by(short_url: params[:link][:short_url])
+    @link.short_url != params[:link][:short_url] && Link.find_by(
+      short_url: params[:link][:short_url])
   end
 
   def check_active_delete
