@@ -88,21 +88,14 @@ a.waves-effect.waves-light.btn.inner {
 }
 .fullbody {
     background: url("http://pokojan.my.id/demo/diamond/images/bg6.jpg");
-    padding: 10px;
+    padding: 8px;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     color: #fff;
     position: relative;
 }
-.fullbody > .overlay {
-  position: absolute;
-  width:100%;
-  height: 100%;
-  background:#000000;
-  opacity: 0.90;
-  filter: alpha(opacity=90);
-}
+
 
 .collection .collection-item.avatar {
   min-height: 84px;
@@ -111,14 +104,3 @@ a.waves-effect.waves-light.btn.inner {
   color: #fff;
   background: #345b70;
 }
-
-
-// .body-container {
-//   background: #F1F1F1 none repeat scroll 0 0;
-// }
-//
-// .input-field {
-//   background: red;
-//   width: 80%;
-//   align-self: center;
-// }

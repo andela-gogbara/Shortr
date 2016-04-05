@@ -1,12 +1,9 @@
-<div class="edit-info">
-<div class="edit-info">
-
+<div class="edit-info">  
 <h5>Link Details</h5>
 <p><strong>Original Link: </strong><%= link.full_url %></p>
 <p><strong>Shortr Link: </strong><a href="<%= root_url + link.short_url %>"><%= root_url + link.short_url %></a></p>
 <p><strong>Clicks: </strong><%= link.visit_count %></p>
 <p><strong>Status: </strong><%= link.active %></p>
-</div>
 <div class="row">
   <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn inner"%>
   <%= link_to "DELETE", link_path(link), method: :delete, class: "waves-effect waves-light btn inner"%>
