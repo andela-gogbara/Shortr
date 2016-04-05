@@ -26,7 +26,6 @@ gem "sdoc", "~> 0.4.0", group: :doc
 # Use ActiveModel has_secure_password
 gem "bcrypt", "~> 3.1.7"
 gem "responders", "~> 2.0"
-gem "coveralls", require: false
 
 # Use Unicorn as the app server
 gem "unicorn"
@@ -48,6 +47,7 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "sqlite3"
   gem "pry"
+  gem "coveralls", require: false
 end
 
 group :production do
@@ -71,5 +71,4 @@ group :test do
   gem "transactional_capybara"
 end
 
-gem "codeclimate-test-reporter", group: :test, require: nil
 gem "simplecov", require: false, group: :test

@@ -4,12 +4,14 @@
 <div class="short-list">
   <ul class="collection">
     <% @user.links.each do |link|%>
+    <% if link.deleted != true %>
     <li class="collection-item avatar">
       <span class="title"><%= link_to "View Details #{link.id}", link_path(link), remote: true%></span>
       <p><strong>Original Link: </strong><%= link.full_url %><br>
       </p>
       <p class="secondary-content"><%= time_ago_in_words(link.created_at)%></p>
     </li>
+    <% end %>
     <% end %>
   </ul>
 </div>

@@ -12,6 +12,6 @@ describe "API KEY", js: true do
   it "allows registered users to see their API Key" do
     login_helper(@user.email, "password")
     click_link("API KEY")
-    expect(page).to have_content("This is your personal api key")
+    expect(page).to have_content("This is your personal API key")
   end
 end
