@@ -22,11 +22,11 @@
 // }
 
 .page-footer {
-  background: #1F3F50 !important;
+  background: #345b70 !important;
 }
 
 .footer-copyright {
-  background: #0e3042 !important;
+  background: #7c96a4 !important;
 }
 
 .sub-card {
@@ -55,20 +55,63 @@
     transition: .2s ease-out;
     cursor: pointer;
 }
+
 nav ul a {
-  font-size: 1rem;
-  color: #000;
-  display: block;
+  color: #345b70;
   margin-top: -60px;
   margin-left: 10px;
   margin-right: 14px;
+  font-family: Gabriola;
+  font-size: 25px;
+  font-weight: bold;
 }
+
+
 .edit-info{
     margin-top: 10px;
     background: #345b70;
     color: #fff;
     padding: 20px;
 }
+
+nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 90px;
+}
+a.waves-effect.waves-light.btn.inner {
+    background: #7c96a4;
+}
+.content{
+    padding: 20px;
+    margin-top: -18px;
+}
+.fullbody {
+    background: url("http://pokojan.my.id/demo/diamond/images/bg6.jpg");
+    padding: 10px;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+.fullbody > .overlay {
+  position: absolute;
+  width:100%;
+  height: 100%;
+  background:#000000;
+  opacity: 0.90;
+  filter: alpha(opacity=90);
+}
+
+.collection .collection-item.avatar {
+  min-height: 84px;
+  padding: 50px;
+  position: relative;
+  color: #fff;
+  background: #345b70;
+}
+
 
 // .body-container {
 //   background: #F1F1F1 none repeat scroll 0 0;
