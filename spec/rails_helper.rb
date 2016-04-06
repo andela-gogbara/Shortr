@@ -11,6 +11,10 @@ require "capybara/rails"
 require "database_cleaner"
 require "shoulda/matchers"
 require "support/request_helpers"
+
+require "coveralls"
+Coveralls.wear!
+
 # require "transactional_capybara/rspec"
 
 RSpec.configure do |config|

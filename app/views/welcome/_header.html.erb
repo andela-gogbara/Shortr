@@ -1,20 +1,29 @@
 <div class="navbar-fixed">
 <nav>
-  <div class="nav-wrapper">
-    <a href="<%= root_path %>" class="brand-logo">Shortr</a>
-    <ul class="right">
-      <% if current_user && request.path == "/" %>
-      <li><%= link_to "Dashboard", user_path(current_user) %></li>
-      <li><%= link_to "Logout", logout_path %></li>
-      <% elsif current_user %>
-      <li><%= link_to "API KEY", api_key_path, remote: true %></li>
-      <li><%= link_to "Create Shortr", "#{links_path}/new", remote:true %></li>
-      <li><%= link_to "Logout", logout_path %></li>
-      <% else %>
-      <li><%= link_to "Sign In", login_path %></li>
-      <li><%= link_to "Sign Up", signup_path %></li>
-      <% end %>
-    </ul>
+  <div class="nav-wrapper header">
+    <div class="logo">
+        <div class="menu-items">
+      <a href="<%= root_path %>">
+        <%= image_tag("shortr-logo.png")%>
+
+      </a>
+
+    </div>
+
+      <ul class="right">
+        <% if current_user && request.path == "/" %>
+        <li><%= link_to "Dashboard", user_path(current_user) %></li>
+        <li><%= link_to "Logout", logout_path %></li>
+        <% elsif current_user %>
+        <li><%= link_to "API KEY", api_key_path, remote: true, class: "btn waves-effect waves-light btn-medium brand-bg white-text regular-text waves-input-wrapper" %></li>
+        <li><%= link_to "Create Shortr", "#{links_path}/new", remote:true, class: "btn waves-effect waves-light btn-medium brand-bg white-text regular-text waves-input-wrapper" %></li>
+        <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+        <li><%= link_to "Sign In", login_path, class: "btn-medium" %></li>
+        <li><%= link_to "Sign Up", signup_path, class: "btn-medium" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
 </div>

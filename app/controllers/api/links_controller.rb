@@ -1,6 +1,6 @@
 module Api
   class LinksController < ApplicationController
-      include LinksHelper
+    include LinksHelper
     respond_to :json
     before_action :validate_url, only: [:create]
     before_action :authenticate_user_with_token!, only: [:update]
@@ -13,7 +13,8 @@ module Api
     def create
       unless @link = Link.find_by(short_url: params[:link][:short_url])
         create_new_action
-        process_action_callback(201, "Successfully created new short", create_new_action.short_url)
+        process_action_callback(201, "Successfully created new short",
+                                create_new_action.short_url)
       else
         process_action_callback(500, "Could not create new short", "")
       end
@@ -21,12 +22,14 @@ module Api
 
     def update
       # binding.pry
-      unless Link.find_by(short_url: params[:link][:old]) && !Link.find_by(short_url: params[:link][:short_url])
+      unless Link.find_by(short_url: params[:link][:old]) && !Link.find_by(
+        short_url: params[:link][:short_url])
         process_action_callback(500, "Could not edit content", "")
       else
-      link = Link.find_by(short_url: params[:link][:old])
-      link.update(update_params)
-      process_action_callback(201, "Successfully edited your short", link.short_url)
+        link = Link.find_by(short_url: params[:link][:old])
+        link.update(update_params)
+        process_action_callback(201, "Successfully edited your short",
+                                link.short_url)
     end
   end
 
@@ -35,7 +38,8 @@ module Api
     #   respond_with @most_popular
     # end
 
-private
+    private
+
     def link_params
       params.require(:link).permit(:full_url, :short_url, :active)
     end
@@ -58,6 +62,5 @@ private
         process_action_callback(500, "Please use the correct link format", "")
       end
     end
-
   end
 end

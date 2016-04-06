@@ -8,21 +8,21 @@ describe "Signin Process", js: true do
     Link.destroy_all
     User.destroy_all
   end
-context "with valid data" do
-  before do
-    login_helper(@user.email, "password")
+  context "with valid data" do
+    before do
+      login_helper(@user.email, "password")
+    end
+    it "should show welcome back message" do
+      expect(page).to have_content("Welcome back")
+    end
   end
-  it "should show welcome back message" do
-    expect(page).to have_content("Welcome back")
-  end
-end
 
-context "with invalid data" do
-before do
-  login_helper(@user.email, "pass")
-end
-it "should show error message" do
-  expect(page).to have_content("Invalid Email or Password")
-end
-end
+  context "with invalid data" do
+    before do
+      login_helper(@user.email, "pass")
+    end
+    it "should show error message" do
+      expect(page).to have_content("Invalid Email or Password")
+    end
+  end
 end

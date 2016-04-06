@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include ApiHelpers
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session, if: proc { |c| c.request.format == "application/json" }
 
   private
 
@@ -26,5 +26,4 @@ protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format ==
   def authenticate_user_with_token!
     process_action_callback(400, "You need a valid API Key to update a link", "") unless current_user_with_token
   end
-
 end

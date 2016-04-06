@@ -8,30 +8,30 @@ describe "Statistics", js: true do
     Link.destroy_all
     User.destroy_all
   end
-context "Anonymous Users" do
-  it "allow anonymous users to see list of influential users" do
-    visit root_path
-    expect(page).to have_content("Top Users")
-  end
-end
-
-context "Registered Users" do
-  before do
-    login_helper(@user.email, "password")
+  context "Anonymous Users" do
+    it "allow anonymous users to see list of influential users" do
+      visit root_path
+      expect(page).to have_content("Top Users")
+    end
   end
 
-  it "allow registered users to access their links detail page" do
-    create_new_short("http://facebook.com")
+  context "Registered Users" do
+    before do
+      login_helper(@user.email, "password")
+    end
 
-    page.all(".collection")[0].click
+    it "allow registered users to access their links detail page" do
+      create_new_short("http://facebook.com")
 
-    expect(page).to have_content("facebook")
+      page.all(".collection")[0].click
+
+      expect(page).to have_content("facebook")
+    end
+
+    it "allow current user to see stats about each link visit" do
+      click_link(page.all(".collection-item")[0].find("span").text)
+
+      expect(page).to have_content("IP Address")
+    end
   end
-
-  it "allow current user to see stats about each link visit" do
-    click_link(page.all(".collection-item")[0].find("span").text)
-
-    expect(page).to have_content("IP Address")
-  end
-end
 end

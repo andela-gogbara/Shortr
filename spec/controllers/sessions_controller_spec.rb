@@ -7,10 +7,10 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     after(:all) { DatabaseCleaner.clean_with(:truncation) }
-    
+
     context "with valid login details" do
       before(:each) do
-        login_details = { email: "testuser@example.com", password: "password"}
+        login_details = { email: "testuser@example.com", password: "password" }
         get :create, user: login_details
       end
       it "renders template new" do
