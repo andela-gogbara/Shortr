@@ -1,9 +1,9 @@
 <div class="card main-card">
-  <div class="card-content white-text">
+  <div class="card-content">
     <span class="card-title">Top Users</span>
     <% @top_users.each do |user|%>
     <div class="card sub-card">
-      <div class="card-content white-text">
+      <div class="card-content">
         <p><strong><%= user.name%></strong></p>
         <p>Links Count: <%= user.links.count %></p>
         <p><%= time_ago_in_words(user.created_at) %></p>
