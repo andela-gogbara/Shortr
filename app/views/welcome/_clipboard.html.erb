@@ -1,0 +1,7 @@
+<% if flash[:link] %>
+<div class="row s12 m4 l8 short-url">
+  <button class='btn waves-effect clip_button waves-light btn-medium brand-bg white-text menu-buttons' data-clipboard-text= "<%= flash[:link]%>">
+  Copy Link to Clipboard
+  </button>
+</div>
+<% end %>

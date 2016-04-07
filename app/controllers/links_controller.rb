@@ -31,7 +31,8 @@ end
     return if check_short_uniqueness_create
     @link.save
     # TitleWorker.perform_async(@link.id)
-    flash[:success] = root_url + @link.short_url
+    flash[:success] = "New shortr link created"
+    flash[:link] = root_url + @link.short_url
     new_create_redirect
   end
 

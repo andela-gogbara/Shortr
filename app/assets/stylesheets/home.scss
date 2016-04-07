@@ -7,7 +7,7 @@
 
 .menu-buttons {
   background: #345b70;
-  // border-color: #65d5ff #1d4e7b #173d5e #1f5482;
+  border-color: #65d5ff #1d4e7b #173d5e #1f5482;
   border-image: none;
  border-radius: 3px;
  border-style: solid;
@@ -19,6 +19,12 @@
 
 .menu-buttons:hover {
   background: #345b70;
+}
+
+.api-key {
+  & button:focus {
+    background-color: #345b70;
+  }
 }
 
 .url-container {
