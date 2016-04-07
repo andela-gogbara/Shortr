@@ -41,7 +41,7 @@ RSpec.describe LinksController, type: :controller, js: true do
     end
 
     it "it should set flash message" do
-      expect(flash[:success]).to eq("http://test.host/plus")
+      expect(flash[:link]).to eq("http://test.host/plus")
     end
 
     context "when user is signed in" do

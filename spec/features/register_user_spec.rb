@@ -11,7 +11,7 @@ describe "Registered Users", js: true do
 
   it "can create a new short with vanity string" do
     login_helper(@user.email, "password")
-    create_new_short("http://facebook.com")
+    create_new_short("New shortr link created")
 
     expect(page).to have_content("http://127.0.0.1")
   end

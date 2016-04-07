@@ -6,7 +6,7 @@
 <% @user.links.each do |link|%>
 <% if link.deleted != true %>
 <li class="collection-item">
-<%= link_to "View Details #{link.id}", link_path(link), remote: true%>
+<%= link_to link.title, link_path(link), remote: true%>
 <div class="secondary-content"><%= time_ago_in_words(link.created_at)%></div>
 </li>
 <% end %>
