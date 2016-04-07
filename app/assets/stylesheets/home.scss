@@ -6,15 +6,19 @@
 }
 
 .menu-buttons {
-  background: #3e88ca -moz-linear-gradient(center bottom , #3679b6 1%, #4ca1ef 51%) repeat scroll 0 0;
-  border-color: #65d5ff #1d4e7b #173d5e #1f5482;
+  background: #345b70;
+  // border-color: #65d5ff #1d4e7b #173d5e #1f5482;
   border-image: none;
  border-radius: 3px;
  border-style: solid;
  border-width: 1px;
  box-shadow: 0 -1px #1e4f7d;
- color: #0e1e2d !important;
+ color: #fff !important;
  font-size: 13px;
+}
+
+.menu-buttons:hover {
+  background: #345b70;
 }
 
 .url-container {
@@ -91,23 +95,36 @@ nav ul a {
 nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
     margin-left: 15px;
     margin-right: 15px;
-    margin-bottom: 90px;
 }
 a.waves-effect.waves-light.btn.inner {
-    background: #7c96a4;
+    background: #fff;
+    color: #345b70;
 }
+
+
 .content{
     padding: 20px;
     margin-top: -18px;
 }
 .fullbody {
-    background: url("http://pokojan.my.id/demo/diamond/images/bg6.jpg");
-    padding: 8px;
+    background: url("http://12ot47uc0fw1m9rn2sc1ho10.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/hero7.jpg");
+    padding: 40px;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     color: #fff;
     position: relative;
+}
+
+.fullbody  > .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  opacity: 0.30;
+  filter: alpha(opacity=90);
 }
 
 
