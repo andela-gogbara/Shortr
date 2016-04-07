@@ -4,7 +4,7 @@
     <% @recent_links.each do |link|%>
     <div class="card sub-card">
       <div class="card-content">
-        <p><strong>Shortr Link: </strong><%= root_url + link.short_url %></p>
+        <p><%= link_to link_title(link), link.full_url%></p>
         <p><strong>Click: </strong><%= link.visit_count %></p>
         <p><%= time_ago_in_words(link.created_at) %></p>
       </div>

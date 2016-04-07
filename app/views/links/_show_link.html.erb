@@ -1,5 +1,5 @@
-<div class="edit-info">  
-<h5>Link Details</h5>
+<div class="edit-info">
+<h5><%= link_title(link) %></h5>
 <p><strong>Original Link: </strong><%= link.full_url %></p>
 <p><strong>Shortr Link: </strong><a href="<%= root_url + link.short_url %>"><%= root_url + link.short_url %></a></p>
 <p><strong>Clicks: </strong><%= link.visit_count %></p>
@@ -29,7 +29,7 @@
       <td><%= stat.browser %></td>
       <td><%= stat.os %></td>
       <td><%# stat.referer %></td>
-      <td><%= time_ago_in_words(stat.created_at) %></td>
+      <td><%= stat.format_date %></td>
     </tr>
     <% end %>
   </tbody>

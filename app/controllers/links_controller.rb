@@ -70,7 +70,7 @@ end
     link.title = page.title
     link.save
   rescue
-      # TODO: Add rescue
+    flash[:error] = "Could not retrive title"
   end
   end
 end
