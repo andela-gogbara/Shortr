@@ -5,6 +5,18 @@
   height: auto;
 }
 
+.menu-buttons {
+  background: #3e88ca -moz-linear-gradient(center bottom , #3679b6 1%, #4ca1ef 51%) repeat scroll 0 0;
+  border-color: #65d5ff #1d4e7b #173d5e #1f5482;
+  border-image: none;
+ border-radius: 3px;
+ border-style: solid;
+ border-width: 1px;
+ box-shadow: 0 -1px #1e4f7d;
+ color: #0e1e2d !important;
+ font-size: 13px;
+}
+
 .url-container {
   margin-top: 200px
 }
