@@ -2,7 +2,8 @@
     <%= form_for @link do |f| %>
     <%= f.hidden_field :user_id, value: link_owner %>
     <div class="input-field">
-      <%= f.text_field :full_url, pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", required: true %>
+      <%= f.text_field :full_url, pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", required: true, placeholder: "http://www.andela.com" %>
+      <%= f.label "Enter Your Url" %>
     </div>
     <div class="row">
       <%= f.submit "Make Shortr ",

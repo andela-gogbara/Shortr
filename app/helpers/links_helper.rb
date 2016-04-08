@@ -65,4 +65,8 @@ module LinksHelper
     user_details[:os] = user_agent.platform
     user_details
   end
+
+  def link_title(link)
+    link.title || link.full_url[0..45]
+  end
 end

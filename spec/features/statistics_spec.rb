@@ -25,11 +25,11 @@ describe "Statistics", js: true do
 
       page.all(".collection")[0].click
 
-      expect(page).to have_content("facebook")
+      expect(page).to have_content("Facebook")
     end
 
     it "allow current user to see stats about each link visit" do
-      click_link(page.all(".collection-item")[0].find("span").text)
+      click_link(page.all(".collection-item")[0].find("a").text)
 
       expect(page).to have_content("IP Address")
     end

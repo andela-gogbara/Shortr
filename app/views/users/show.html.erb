@@ -1,24 +1,22 @@
-<h5 class="login-text"><%= @user.name  %> Shortr Links </h5>
-  <div class="row">
-    <div class="col l6">
+<div class="row">
+<div class="col l6">
 <div class="short-list">
-  <ul class="collection">
-    <% @user.links.each do |link|%>
-    <% if link.deleted != true %>
-    <li class="collection-item avatar">
-      <span class="title"><%= link_to "View Details #{link.id}", link_path(link), remote: true%></span>
-      <p><strong>Original Link: </strong><%= link.full_url %><br>
-      </p>
-      <p class="secondary-content"><%= time_ago_in_words(link.created_at)%></p>
-    </li>
-    <% end %>
-    <% end %>
-  </ul>
+<ul class="collection with-header">
+<li><h5 class="login-text"><%= @user.name  %> Shortr Links </h5></li>
+<% @user.links.each do |link|%>
+<% if link.deleted != true %>
+<li class="collection-item">
+<%= link_to link_title(link), link_path(link), remote: true%>
+<div class="secondary-content"><%= time_ago_in_words(link.created_at)%></div>
+</li>
+<% end %>
+<% end %>
+</ul>
 </div>
-    </div>
-    <div class="col l6">
-      <div class="row" id="show-link">
+</div>
+<div class="col l6">
+<div class="row" id="show-link">
 
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>

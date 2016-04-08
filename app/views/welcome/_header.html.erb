@@ -1,29 +1,28 @@
-<div class="navbar-fixed">
+<div class="navbar-fixed header">
 <nav>
   <div class="nav-wrapper header">
-    <div class="logo">
-        <div class="menu-items">
-      <a href="<%= root_path %>">
-        <%= image_tag("shortr-logo.png")%>
-
-      </a>
-
+    <div class="col s5">
+      <div class="brand-logo">
+        <a href="<%= root_path %>">
+          <%= image_tag("shortr-logo.png")%>
+        </a>
+      </div>
     </div>
-
+    <div class="col s 7">
       <ul class="right">
         <% if current_user && request.path == "/" %>
-        <li><%= link_to "Dashboard", user_path(current_user) %></li>
-        <li><%= link_to "Logout", logout_path %></li>
+        <li><%= link_to "Dashboard", user_path(current_user), class: "waves-effect waves-light btn menu-buttons" %></li>
+        <li><%= link_to "Logout", logout_path, class: "waves-effect waves-light btn menu-buttons" %></li>
         <% elsif current_user %>
-        <li><%= link_to "API KEY", api_key_path, remote: true, class: "btn waves-effect waves-light btn-medium brand-bg white-text regular-text waves-input-wrapper" %></li>
-        <li><%= link_to "Create Shortr", "#{links_path}/new", remote:true, class: "btn waves-effect waves-light btn-medium brand-bg white-text regular-text waves-input-wrapper" %></li>
-        <li><%= link_to "Logout", logout_path %></li>
+        <li><%= link_to "API KEY", api_key_path, remote: true, class: "waves-effect waves-light btn menu-buttons" %></li>
+        <li><%= link_to "Create Shortr", "#{links_path}/new", remote:true, class: "waves-effect waves-light btn menu-buttons" %></li>
+        <li><%= link_to "Logout", logout_path, class: "waves-effect waves-light btn menu-buttons" %></li>
         <% else %>
-        <li><%= link_to "Sign In", login_path, class: "btn-medium" %></li>
-        <li><%= link_to "Sign Up", signup_path, class: "btn-medium" %></li>
+        <li><%= link_to "Sign In", login_path, class: "waves-effect waves-light btn menu-buttons" %></li>
+        <li><%= link_to "Sign Up", signup_path, class: "waves-effect waves-light btn menu-buttons" %></li>
         <% end %>
       </ul>
     </div>
+    </div>
+  </nav>
   </div>
-</nav>
-</div>

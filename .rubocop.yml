@@ -1,7 +1,16 @@
 AllCops:
   Exclude:
+    - "lib/tasks/capistrano.rake"
     - "vendor/**/*"
     - "db/schema.rb"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+    - "script/cucumber"
+    - "db/**/*"
+    - "lib/**/*"
+    - "bin/**/*"
+    - "config/**/*"
+    - "features/**/*"
   UseCache: false
 Style/CollectionMethods:
   Description: Preferred collection methods.

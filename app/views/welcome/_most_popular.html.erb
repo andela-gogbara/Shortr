@@ -1,12 +1,12 @@
 <div class="card main-card">
-  <div class="card-content white-text">
+  <div class="card-content">
     <span class="card-title">Popular Links</span>
     <% @most_popular.each do |link| %>
     <div class="card sub-card">
-      <div class="card-content white-text">
-        <p><strong>Shortr Link: </strong><%= root_url + link.short_url %></p>
+      <div class="card-content">
+        <p><%= link_to link_title(link), link.full_url%></p>
         <p><strong>Clicks: </strong><%= link.visit_count %></p>
-        <p>about <%= time_ago_in_words(link.created_at) %></p>
+        <p><%= time_ago_in_words(link.created_at) %></p>
       </div>
     </div>
     <% end %>

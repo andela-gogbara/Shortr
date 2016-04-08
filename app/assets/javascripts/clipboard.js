@@ -1,4 +1,3 @@
-$("#show-link").html("<%= j(render('users/api_key', :link => @link)) %>");
 $(document).ready(function(){
 	var clip = new ZeroClipboard($(".clip_button"));
 	$(".clip_button").click(function() {

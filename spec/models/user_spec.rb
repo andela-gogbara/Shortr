@@ -1,6 +1,15 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
+  describe "instance methods" do
+    context "respond to instance method calls" do
+      it { is_expected.to respond_to(:name) }
+      it { is_expected.to respond_to(:email) }
+      it { is_expected.to respond_to(:link_id) }
+      it { is_expected.to respond_to(:api_key) }
+    end
+  end
+
   describe "Asssociations" do
     it { should have_many(:links) }
   end

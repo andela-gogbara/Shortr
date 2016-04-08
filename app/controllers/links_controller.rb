@@ -23,15 +23,15 @@ class LinksController < ApplicationController
       flash[:success] = "Updated Successfully"
       redirect_to current_user
     end
-end
+  end
 
   def create
-    # binding.pry
     @link = Link.new(link_params)
     return if check_short_uniqueness_create
     @link.save
-    # TitleWorker.perform_async(@link.id)
-    flash[:success] = root_url + @link.short_url
+    get_title(@link.id)
+    flash[:success] = "New shortr link created"
+    flash[:link] = root_url + @link.short_url
     new_create_redirect
   end
 
@@ -61,5 +61,15 @@ end
 
   def link_params
     params.require(:link).permit(:full_url, :short_url, :active, :user_id)
+  end
+
+  def get_title(link_id)
+    link = Link.find(link_id)
+    agent = Mechanize.new
+    page = agent.get(link.full_url)
+    link.title = page.title
+    link.save
+  rescue
+    flash[:error] = "Could not retrive title"
   end
 end

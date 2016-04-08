@@ -14,16 +14,16 @@ describe "URL Management", js: true do
     end
     it "allows redistered users to edit their short urls" do
       create_new_short("http://example.com", "short")
-      click_link(page.all(".collection-item")[0].find("span").text)
+      click_link(page.all(".collection-item")[0].find("a").text)
       click_link("EDIT")
       fill_in("link_short_url", with: "new_vanity")
       click_button("Save Changes")
       expect(page).to have_content("Updated Successfully")
     end
 
-
     it "should prevent users from updating with string that already exist" do
-      click_link(page.all(".collection-item")[0].find("span").text)
+      create_new_short("http://google.com", "short")
+      click_link(page.all(".collection-item")[0].find("a").text)
       click_link("EDIT")
       fill_in("link_short_url", with: "short")
       click_button("Save Changes")
@@ -31,7 +31,7 @@ describe "URL Management", js: true do
     end
 
     it "allows registered users to edit their delete links" do
-      click_link(page.all(".collection-item")[0].find("span").text)
+      click_link(page.all(".collection-item")[0].find("a").text)
       click_link("DELETE")
       expect(page).to have_content("Deleted Successfully")
     end

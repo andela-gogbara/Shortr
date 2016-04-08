@@ -1,14 +1,15 @@
 
   <div class="fullbody">
-  <div class="overlay">
+  <div class="overlay"> </div>
       <div class="container center url-container">
               <%=  render "welcome/home_page_short_form" %>
             <div class="row s12 m4 l8 short-url">
-              <a href="<%= flash[:success] %>"><%= flash[:success] %></a>
+              <a href="<%= flash[:link] %>"><%= flash[:link] %></a>
             </div>
+            <%=  render "welcome/clipboard" %>
       </div>
 
-</div>
+
 </div>
 
 <div class="row">
