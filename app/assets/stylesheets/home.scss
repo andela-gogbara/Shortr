@@ -12,20 +12,20 @@ body {
 .background {
   background: url("http://bit.ly/1Ma7Dzv");
   background-size: cover;
-  min-height: 100%;
   height: auto;
+  min-height: 100%;
 }
 
 .menu-buttons {
   background: #345b70;
   border-color: #65d5ff #1d4e7b #173d5e #1f5482;
   border-image: none;
- border-radius: 3px;
- border-style: solid;
- border-width: 1px;
- box-shadow: 0 -1px #1e4f7d;
- color: #fff !important;
- font-size: 13px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 -1px #1e4f7d;
+  color: #fff !important;
+  font-size: 13px;
 }
 
 .menu-buttons:hover {
@@ -50,10 +50,6 @@ body {
   left: 20px !important;
 }
 
-// .menu-items {
-//   margin-right: 20px;
-// }
-
 .page-footer {
   background: #345b70 !important;
 }
@@ -73,49 +69,48 @@ body {
   color: #fff;
 }
 .login-text {
-    font-size: 1.9em;
-    line-height: 110%;
-    margin: 2.1rem 0 1.68rem 0;
-    text-align: center;
-    color: #0e3042;
-    font-size: 45px;
-    font-weight: bolder;
-    font-family: Gabriola;
+  color: #0e3042;
+  font-size: 1.9em;
+  font-family: Gabriola;
+  font-weight: bolder;
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0;
+  text-align: center;
 }
 .btn, .btn-large {
-    text-decoration: none;
-    color: #fff;
-    background-color: #345b70;
-    letter-spacing: .5px;
-    transition: .2s ease-out;
-    cursor: pointer;
+  background-color: #345b70;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  text-decoration: none;
 }
 
 nav ul a {
   color: #345b70;
-  margin-top: -60px;
-  margin-left: 10px;
-  margin-right: 14px;
   font-family: Gabriola;
   font-size: 25px;
   font-weight: bold;
+  margin-left: 10px;
+  margin-right: 14px;
+  margin-top: -60px;
 }
 
 
 .edit-info{
-    margin-top: 10px;
-    background: #345b70;
-    color: #fff;
-    padding: 20px;
+  background: #345b70;
+  color: #fff;
+  margin-top: 10px;
+  padding: 20px;
 }
 
 nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
-    margin-left: 15px;
-    margin-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 a.waves-effect.waves-light.btn.inner {
-    background: #fff;
     color: #345b70;
+    background: #fff;
 }
 
 
@@ -123,32 +118,33 @@ a.waves-effect.waves-light.btn.inner {
     padding: 20px;
     margin-top: -18px;
 }
+
 .fullbody {
     background: url("http://12ot47uc0fw1m9rn2sc1ho10.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/hero7.jpg");
-    padding: 40px;
-    background-position: center center;
     background-attachment: fixed;
+    background-position: center center;
     background-size: cover;
     color: #fff;
+    padding: 40px;
     position: relative;
 }
 
-.fullbody  > .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  background: #000;
-  opacity: 0.30;
-  filter: alpha(opacity=90);
-}
+  .fullbody  > .overlay {
+    background: #000;
+    filter: alpha(opacity=90);
+    height: 100%;
+    left: 0px;
+    opacity: 0.30;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+  }
 
 
-.collection .collection-item.avatar {
-  min-height: 84px;
-  padding: 50px;
-  position: relative;
-  color: #fff;
-  background: #345b70;
-}
+  .collection .collection-item.avatar {
+    background: #345b70;
+    color: #fff;
+    min-height: 84px;
+    padding: 50px;
+    position: relative;
+  }
