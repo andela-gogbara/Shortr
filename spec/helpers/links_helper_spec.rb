@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe LinksHelper, type: :helper do
-    let(:link) { create(:link) }
+  let(:link) { create(:link) }
 
   describe "#link_title" do
     context "link has no valid title" do

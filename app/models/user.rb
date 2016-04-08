@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
     User.includes(:links).joins(:links).order("links.visit_count desc").limit(5)
   }
 
-
   def generate_api_key
     self.api_key = SecureRandom.urlsafe_base64(48)
   end

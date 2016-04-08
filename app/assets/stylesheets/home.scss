@@ -3,9 +3,9 @@
 }
 ​
 body {
+  color: #fff;
   font-family: 'Simonetta', cursive;
   font-size: 14px;
-  color: #fff;
 }
 
 
@@ -131,9 +131,9 @@ a.waves-effect.waves-light.btn.inner {
 
   .fullbody  > .overlay {
     background: #000;
-    filter: alpha(opacity=90);
+    filter: alpha(opacity = 90);
     height: 100%;
-    left: 0px;
+    left: 0;
     opacity: 0.30;
     position: absolute;
     width: 100%;

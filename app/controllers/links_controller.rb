@@ -23,7 +23,7 @@ class LinksController < ApplicationController
       flash[:success] = "Updated Successfully"
       redirect_to current_user
     end
-end
+  end
 
   def create
     @link = Link.new(link_params)

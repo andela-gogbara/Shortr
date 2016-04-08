@@ -5,11 +5,6 @@ module Api
     before_action :validate_url, only: [:create]
     before_action :authenticate_user_with_token!, only: [:update]
 
-    # def index
-    #   @links = Link.all
-    #   respond_with @links
-    # end
-
     def create
       unless @link = Link.find_by(short_url: params[:link][:short_url])
         create_new_action
@@ -21,7 +16,6 @@ module Api
     end
 
     def update
-      # binding.pry
       unless Link.find_by(short_url: params[:link][:old]) && !Link.find_by(
         short_url: params[:link][:short_url])
         process_action_callback(500, "Could not edit content", "")
@@ -30,13 +24,8 @@ module Api
         link.update(update_params)
         process_action_callback(201, "Successfully edited your short",
                                 link.short_url)
+      end
     end
-  end
-
-    # def most_popular
-    #   @most_popular = Link.most_popular
-    #   respond_with @most_popular
-    # end
 
     private
 
