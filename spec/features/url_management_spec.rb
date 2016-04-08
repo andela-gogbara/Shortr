@@ -21,9 +21,8 @@ describe "URL Management", js: true do
       expect(page).to have_content("Updated Successfully")
     end
 
-
     it "should prevent users from updating with string that already exist" do
-      create_new_short("http://example.com", "short")
+      create_new_short("http://google.com", "short")
       click_link(page.all(".collection-item")[0].find("a").text)
       click_link("EDIT")
       fill_in("link_short_url", with: "short")

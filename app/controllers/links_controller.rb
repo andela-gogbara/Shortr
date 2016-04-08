@@ -58,12 +58,12 @@ end
   end
 
   private
+
   def link_params
     params.require(:link).permit(:full_url, :short_url, :active, :user_id)
   end
 
   def get_title(link_id)
-    begin
     link = Link.find(link_id)
     agent = Mechanize.new
     page = agent.get(link.full_url)
@@ -71,6 +71,5 @@ end
     link.save
   rescue
     flash[:error] = "Could not retrive title"
-  end
   end
 end
