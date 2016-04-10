@@ -32,6 +32,21 @@ body {
   background: #345b70;
 }
 
+.copy-buttons {
+  background: white !important;
+  border-image: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 -1px #1e4f7d;
+  color: #345b70 !important;
+  font-size: 13px;
+}
+
+.copy-buttons:hover {
+  background: #345b70;
+}
+
 .api-key {
   & button:focus {
     background-color: #345b70;
