@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "URL Management", js: true do
   before(:all) do
-    @user = FactoryGirl.create(:user, password: "password")
+    @user = create(:user, password: "password")
   end
   after(:all) do
     Link.destroy_all

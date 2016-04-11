@@ -18,6 +18,7 @@ module LinksHelper
     end
   end
 
+  # checks to see link already exist and new short url not equal old short
   def check_short_uniqueness_update?
     @link.short_url != params[:link][:short_url] && Link.find_by(
       short_url: params[:link][:short_url])

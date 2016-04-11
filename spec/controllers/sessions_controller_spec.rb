@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe SessionsController, type: :controller do
   describe "POST create" do
     before(:all) do
-      @valid_user = FactoryGirl.create(:user)
+      @valid_user = create(:user)
     end
 
     after(:all) { DatabaseCleaner.clean_with(:truncation) }

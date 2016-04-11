@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe Api::LinksController do
   before(:all) do
-    @link = FactoryGirl.create(:link, short_url: "short")
-    @user = FactoryGirl.create(:user)
+    @link = create(:link, short_url: "short")
+    @user = create(:user)
   end
 
   describe "#create" do

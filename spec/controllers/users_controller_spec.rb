@@ -6,7 +6,7 @@ RSpec.describe UsersController, type: :controller do
   end
   after(:all) { DatabaseCleaner.clean_with(:truncation) }
 
-  let(:user_one) { FactoryGirl.create(:user, name: "test", email: "tes@test.com", password: "test") }
+  let(:user_one) { create(:user, name: "test", email: "tes@test.com", password: "test") }
   describe "new account creation" do
     before do
       get :new
@@ -24,7 +24,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST create" do
-    let(:new_user) { FactoryGirl.attributes_for(:user) }
+    let(:new_user) { attributes_for(:user) }
 
     context "creates account with valid data" do
       it "creates a new achievement in the database" do
@@ -36,7 +36,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "does not creates account with invalid data" do
       before do
-        invalid_user = FactoryGirl.attributes_for(:user, email: "")
+        invalid_user = attributes_for(:user, email: "")
         post :create, user: invalid_user
       end
 

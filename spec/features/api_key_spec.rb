@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "API KEY", js: true do
   before(:all) do
-    @user = FactoryGirl.create(:user, password: "password")
+    @user = create(:user, password: "password")
     current_user = @user.id
   end
   after(:all) do

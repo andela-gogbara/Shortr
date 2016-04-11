@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_links = @user.links.order(created_at: :desc)
   end
 
   def show_api

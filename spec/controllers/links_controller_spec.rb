@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe LinksController, type: :controller, js: true do
   before(:all) do
-    @link = FactoryGirl.create(:link)
+    @link = create(:link)
   end
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { create(:user) }
 
   after(:all) { DatabaseCleaner.clean_with(:truncation) }
 
@@ -31,12 +31,12 @@ RSpec.describe LinksController, type: :controller, js: true do
     end
 
     before do
-      post :create, link: FactoryGirl.attributes_for(:link, short_url: "plus")
+      post :create, link: attributes_for(:link, short_url: "plus")
     end
 
     it "increase link count by 1" do
       expect do
-        post :create, link: FactoryGirl.attributes_for(:link, short_url: "tested")
+        post :create, link: attributes_for(:link, short_url: "tested")
       end.to change(Link, :count).by(1)
     end
 
@@ -58,7 +58,7 @@ RSpec.describe LinksController, type: :controller, js: true do
     end
 
     context "with valid data" do
-      let(:valid_data) { FactoryGirl.attributes_for(:link, full_url: "full_url", short_url: "short_url") }
+      let(:valid_data) { attributes_for(:link, full_url: "full_url", short_url: "short_url") }
       before do
         put :update, id: @link, link: valid_data
       end

@@ -38,10 +38,6 @@ RSpec.configure do |config|
     end
   end
 
-  # config.after(:each, js: true) do
-  #   TransactionalCapybara::AjaxHelpers.wait_for_ajax(page)
-  # end
-
   config.before(:each) do
     DatabaseCleaner.start
   end
@@ -53,14 +49,7 @@ end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
-    # Choose a test framework:
     with.test_framework :rspec
-
-    # Choose a library:
-    # with.library :active_record
-    # with.library :active_model
-    # with.library :action_controller
-    # Or, choose all of the above:
     with.library :rails
   end
 end
