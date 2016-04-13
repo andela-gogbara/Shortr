@@ -56,7 +56,9 @@ describe Api::LinksController do
 
     context "Vanity string already exist" do
       before do
-        post :create, link: { full_url: "http://facebook.com", short_url: "short", api_key: @user.api_key }, format: :json
+        post :create, link: { full_url: "http://facebook.com",
+                              short_url: "short",
+                              api_key: @user.api_key }, format: :json
       end
       it "should show error message if vanity exist" do
         expect(json["status_info"]).to eq("Could not create new short")
