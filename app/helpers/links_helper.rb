@@ -18,7 +18,6 @@ module LinksHelper
     end
   end
 
-  # checks to see link already exist and new short url not equal old short
   def check_short_uniqueness_update?
     @link.short_url != params[:link][:short_url] && Link.find_by(
       short_url: params[:link][:short_url])
@@ -60,11 +59,11 @@ module LinksHelper
 
   def get_visit_details
     user_agent = UserAgent.parse(request.env["HTTP_USER_AGENT"])
-    user_details = {}
-    user_details[:ip] = request.ip
-    user_details[:browser] = user_agent.browser
-    user_details[:os] = user_agent.platform
-    user_details
+    {
+      ip: request.ip,
+      browser: user_agent.browser,
+      os: user_agent.platform,
+    }
   end
 
   def link_title(link)

@@ -4,13 +4,15 @@ RSpec.describe UsersController, type: :controller do
   after(:all) do
     User.destroy_all
   end
+
   after(:all) { DatabaseCleaner.clean_with(:truncation) }
 
-  let(:user_one) { create(:user, name: "test", email: "tes@test.com", password: "test") }
+  let(:user_one) { create(:user, email: "tes@test.com", password: "test") }
   describe "new account creation" do
     before do
       get :new
     end
+
     it { is_expected.to respond_with :ok }
     it { is_expected.to render_template :new }
   end
@@ -19,17 +21,29 @@ RSpec.describe UsersController, type: :controller do
     before do
       get :show, id: user_one
     end
+
     it { is_expected.to respond_with :ok }
     it { is_expected.to render_template :show }
   end
 
   describe "POST create" do
-    let(:new_user) { attributes_for(:user) }
+    let(:new_user) { attributes_for(:user, name: "James") }
+    before do
+      post :create, user: new_user
+    end
 
     context "creates account with valid data" do
+      it "should set flash message" do
+        expect(flash[:success]).to eq("Registration successful")
+      end
+
+      it "should return the correct name for user created" do
+        expect(User.last.name).to eq("James")
+      end
+
       it "creates a new achievement in the database" do
         expect do
-          post :create, user: new_user
+          post :create, user: attributes_for(:user)
         end.to change(User, :count).by(1)
       end
     end
@@ -55,6 +69,7 @@ RSpec.describe UsersController, type: :controller do
     before do
       session[:user_id] = user_one.id
     end
+
     it "assigns an api key to new users" do
       xhr :get, :show_api, id: user_one, format: :js
       expect(response).to render_template("users/api_key")

@@ -6,24 +6,24 @@ module Api
     before_action :authenticate_user_with_token!, only: [:update]
 
     def create
-      unless @link = Link.find_by(short_url: params[:link][:short_url])
+      if @link = Link.find_by(short_url: params[:link][:short_url])
+        process_action_callback(500, "Could not create new short", "")
+      else
         create_new_action
         process_action_callback(201, "Successfully created new short",
                                 create_new_action.short_url)
-      else
-        process_action_callback(500, "Could not create new short", "")
       end
     end
 
     def update
-      unless Link.find_by(short_url: params[:link][:old]) && !Link.find_by(
+      if Link.find_by(short_url: params[:link][:old]) && !Link.find_by(
         short_url: params[:link][:short_url])
-        process_action_callback(500, "Could not edit content", "")
-      else
         link = Link.find_by(short_url: params[:link][:old])
         link.update(update_params)
         process_action_callback(201, "Successfully edited your short",
-                                link.short_url)
+                              link.short_url)
+      else
+        process_action_callback(500, "Could not edit content", "")
       end
     end
 

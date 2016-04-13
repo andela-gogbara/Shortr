@@ -4,7 +4,6 @@ RSpec.describe Link, type: :model do
   subject { create(:link) }
 
   describe "instance methods" do
-    context "respond to instance method calls" do
       it { is_expected.to respond_to(:title) }
       it { is_expected.to respond_to(:full_url) }
       it { is_expected.to respond_to(:short_url) }
@@ -12,7 +11,6 @@ RSpec.describe Link, type: :model do
       it { is_expected.to respond_to(:active) }
       it { is_expected.to respond_to(:deleted) }
       it { is_expected.to respond_to(:user_id) }
-    end
   end
 
   describe "Asssociations" do
@@ -25,6 +23,7 @@ RSpec.describe Link, type: :model do
 
   describe "Links Scope" do
     let(:popular_link) { create(:link) }
+
     it "returns most_popular links" do
       popular_link.visit_count += 3
       popular_link.save
