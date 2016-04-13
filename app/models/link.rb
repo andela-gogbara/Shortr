@@ -5,7 +5,7 @@ class Link < ActiveRecord::Base
   before_create :link_shortener
 
   def link_shortener
-    if short_url.nil? || short_url.eql?("")
+    if short_url.nil? || short_url.empty?
       self.short_url = SecureRandom.urlsafe_base64(5)
     end
   end
