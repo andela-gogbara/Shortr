@@ -4,13 +4,13 @@ RSpec.describe Link, type: :model do
   subject { create(:link) }
 
   describe "instance methods" do
-      it { is_expected.to respond_to(:title) }
-      it { is_expected.to respond_to(:full_url) }
-      it { is_expected.to respond_to(:short_url) }
-      it { is_expected.to respond_to(:visit_count) }
-      it { is_expected.to respond_to(:active) }
-      it { is_expected.to respond_to(:deleted) }
-      it { is_expected.to respond_to(:user_id) }
+    it { is_expected.to respond_to(:title) }
+    it { is_expected.to respond_to(:full_url) }
+    it { is_expected.to respond_to(:short_url) }
+    it { is_expected.to respond_to(:visit_count) }
+    it { is_expected.to respond_to(:active) }
+    it { is_expected.to respond_to(:deleted) }
+    it { is_expected.to respond_to(:user_id) }
   end
 
   describe "Asssociations" do

@@ -18,7 +18,7 @@ class LinksController < ApplicationController
 
   def update
     @link = Link.find(params[:id])
-    return check_link_uniqueness if unique_link? && unique_vanity?(@link)
+    return invalid_link_action if unique_link? && unique_vanity?(@link)
     if @link.update_attributes(link_params)
       flash[:success] = "Updated Successfully"
       redirect_to current_user
@@ -27,12 +27,12 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    return check_link_uniqueness if unique_link?
+    return invalid_link_action if unique_link?
     @link.save
     get_title(@link.id)
     flash[:success] = "New shortr link created"
     flash[:link] = root_url + @link.short_url
-    new_create_redirect
+    redirect_user
   end
 
   def show

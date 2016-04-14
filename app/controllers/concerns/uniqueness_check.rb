@@ -1,9 +1,9 @@
 module UniquenessCheck
   extend ActiveSupport::Concern
 
-  def check_link_uniqueness
-      flash[:error] = "Link already taken"
-      new_create_redirect
+  def invalid_link_action
+    flash[:error] = "Link already taken"
+    redirect_user
   end
 
   def unique_vanity?(link)
@@ -14,7 +14,7 @@ module UniquenessCheck
     Link.find_by(short_url: params[:link][:short_url])
   end
 
-  def new_create_redirect
+  def redirect_user
     if current_user
       redirect_to user_path(current_user)
     else

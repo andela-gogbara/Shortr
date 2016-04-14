@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :links
+    get "most-popular", to: "links#most_popular"
+    get "recent-links", to: "links#recent_links"
+    get "top-users", to: "links#top_users"
   end
 
   get "/", to: 'welcome#message', as: "root"

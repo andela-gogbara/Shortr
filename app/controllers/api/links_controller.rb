@@ -6,11 +6,18 @@ module Api
 
     def create
       if @link = Link.find_by(short_url: params[:link][:short_url])
-        process_action_callback(500, "Could not create new short", "")
+        process_action_callback(
+          500,
+          "Could not create new short",
+          ""
+        )
       else
         create_new_action
-        process_action_callback(201, "Successfully created new short",
-                                create_new_action.short_url)
+        process_action_callback(
+          201,
+          "Successfully created new short",
+          create_new_action.short_url
+        )
       end
     end
 
@@ -19,11 +26,29 @@ module Api
         short_url: params[:link][:short_url])
         link = Link.find_by(short_url: params[:link][:old])
         link.update(update_params)
-        process_action_callback(201, "Successfully edited your short",
-                              link.short_url)
+        process_action_callback(
+          201,
+          "Successfully edited your short",
+          link.short_url
+        )
       else
         process_action_callback(500, "Could not edit content", "")
       end
+    end
+
+    def most_popular
+      most_popular = Link.most_popular
+      respond_with most_popular
+    end
+
+    def recent_links
+      recent_links = Link.most_popular
+      respond_with recent_links
+    end
+
+    def top_users
+      top_users = User.top_users
+      respond_with top_users
     end
 
     private

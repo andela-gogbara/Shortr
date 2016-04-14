@@ -8,7 +8,7 @@ RSpec.describe Statistic, type: :model do
 
   describe "#format_date" do
     it "should return date in the correct format" do
-      time = Time.now.strftime("%m/%d/%Y")
+      time = stats.created_at.strftime("%m/%d/%Y")
       expect(stats.format_date).to eq(time)
     end
   end

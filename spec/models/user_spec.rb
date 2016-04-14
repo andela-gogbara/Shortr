@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
   describe "User Scopes" do
     it "returns top users" do
       user = create(:user)
-      link = create(:link, user_id: user.id)
+      create(:link, user_id: user.id)
       expect(User.top_users.first).to eql(user)
     end
   end
