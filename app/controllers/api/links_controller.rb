@@ -36,21 +36,6 @@ module Api
       end
     end
 
-    def most_popular
-      most_popular = Link.most_popular
-      respond_with most_popular
-    end
-
-    def recent_links
-      recent_links = Link.most_popular
-      respond_with recent_links
-    end
-
-    def top_users
-      top_users = User.top_users
-      respond_with top_users
-    end
-
     private
 
     def link_params

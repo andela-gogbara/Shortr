@@ -104,11 +104,4 @@ describe Api::LinksController do
       end
     end
   end
-
-  # describe "#most_popular", type: :request, format: :json do
-  #   it "should return the most popular links" do
-  #   get "/api/most-popular"
-  #     expect(response).to eq("test")
-  #   end
-  # end
 end
