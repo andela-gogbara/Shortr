@@ -25,7 +25,7 @@ describe "URL Management", js: true do
       create_new_short("http://google.com", "short")
       click_link(page.all(".collection-item")[0].find("a").text)
       click_link("EDIT")
-      fill_in("link_short_url", with: "short")
+      fill_in("link_short_url", with: "new_vanity")
       click_button("Save Changes")
       expect(page).to have_content("Link already taken")
     end

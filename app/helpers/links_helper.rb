@@ -3,69 +3,6 @@ module LinksHelper
     current_user.id if current_user
   end
 
-  def check_short_uniqueness_update
-    @link = Link.find(params[:id])
-    if check_short_uniqueness_update?
-      flash[:error] = "Link already taken"
-      new_create_redirect
-    end
-  end
-
-  def check_short_uniqueness_create
-    if Link.find_by(short_url: params[:link][:short_url])
-      flash[:error] = "Link already taken"
-      new_create_redirect
-    end
-  end
-
-  def check_short_uniqueness_update?
-    @link.short_url != params[:link][:short_url] && Link.find_by(
-      short_url: params[:link][:short_url])
-  end
-
-  def check_active_delete
-    if @link.active && @link.deleted == false
-      @link.visit_count += 1
-      @link.save
-      @link.statistics.create(get_visit_details)
-      redirect_to @link.full_url
-    else
-      link_error_message
-    end
-  end
-
-  def link_error_message
-    return check_active? unless @link.active
-    return check_deleted? if @link.deleted
-  end
-
-  def check_active?
-    flash[:error] = "Link made inactive by owner"
-    new_create_redirect
-  end
-
-  def check_deleted?
-    flash[:error] = "Link has been deleted by owner"
-    new_create_redirect
-  end
-
-  def new_create_redirect
-    if current_user
-      redirect_to user_path(current_user)
-    else
-      redirect_to root_path
-    end
-  end
-
-  def get_visit_details
-    user_agent = UserAgent.parse(request.env["HTTP_USER_AGENT"])
-    {
-      ip: request.ip,
-      browser: user_agent.browser,
-      os: user_agent.platform,
-    }
-  end
-
   def link_title(link)
     link.title || link.full_url[0..45]
   end

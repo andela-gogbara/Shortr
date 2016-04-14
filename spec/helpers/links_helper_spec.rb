@@ -15,18 +15,4 @@ RSpec.describe LinksHelper, type: :helper do
       end
     end
   end
-
-  describe "#link_owner" do
-    context "registered user" do
-      it "should return current_user id" do
-        expect(helper.link_owner).to eq(user.id)
-      end
-    end
-
-    context "anonymous user" do
-      it "should return current_user id" do
-        expect(helper.link_owner).to eq(nil)
-      end
-    end
-  end
 end
