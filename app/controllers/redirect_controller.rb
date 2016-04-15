@@ -13,7 +13,8 @@ class RedirectController < ApplicationController
       LinkValidations.new(@link, request).valid_link_action
       redirect_to @link.full_url
     else
-      LinkValidations.new(@link).link_error_message
+      flash[:error] = "Link made inactive by owner" unless @link.active
+      flash[:error] = "Link has been deleted by owner" if @link.deleted
       redirect_user
     end
   end
