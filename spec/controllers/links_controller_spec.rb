@@ -61,7 +61,7 @@ RSpec.describe LinksController, type: :controller, js: true do
         full_url: "full_url",
         short_url: "short_url"
       )
-    end
+      end
 
       before do
         put :update, id: @link, link: valid_data
