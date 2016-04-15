@@ -26,7 +26,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_with_token
 
   def authenticate_user_with_token!
-    process_action_callback(400, "You need a valid API Key to update a link",
-                            "") unless current_user_with_token
+    process_action_callback(
+      400,
+      "You need a valid API Key to update a link",
+      ""
+    ) unless current_user_with_token
   end
 end

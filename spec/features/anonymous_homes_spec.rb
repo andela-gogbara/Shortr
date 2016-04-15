@@ -4,7 +4,7 @@ RSpec.feature "AnonymousHomes", type: :feature do
   before :all do
     Capybara.current_driver = :selenium
   end
-  let(:link) { FactoryGirl.create(:link) }
+  let(:link) { create(:link) }
 
   it "returns shorten url" do
     visit("/")

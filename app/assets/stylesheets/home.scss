@@ -1,3 +1,7 @@
+$deep-blue: #345b70;
+$my-white: #ffffff;
+$box-shadow: #1e4f7d;
+
 * {
     font-family: 'Simonetta', cursive;
 }
@@ -17,24 +21,39 @@ body {
 }
 
 .menu-buttons {
-  background: #345b70;
+  background: $deep-blue;
   border-color: #65d5ff #1d4e7b #173d5e #1f5482;
   border-image: none;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 0 -1px #1e4f7d;
+  box-shadow: 0 -1px $box-shadow;
   color: #fff !important;
   font-size: 13px;
 }
 
 .menu-buttons:hover {
-  background: #345b70;
+  background: $deep-blue;
+}
+
+.copy-buttons {
+  background: $my-white !important;
+  border-image: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 -1px $box-shadow;
+  color: $deep-blue !important;
+  font-size: 13px;
+}
+
+.copy-buttons:hover {
+  background: $deep-blue;
 }
 
 .api-key {
   & button:focus {
-    background-color: #345b70;
+    background-color: $deep-blue;
   }
 }
 
@@ -43,7 +62,7 @@ body {
 }
 
 .header {
-  background: white;
+  background: $my-white;
 }
 
 .brand-logo {
@@ -51,7 +70,7 @@ body {
 }
 
 .page-footer {
-  background: #345b70 !important;
+  background: $deep-blue !important;
 }
 
 .footer-copyright {
@@ -60,13 +79,13 @@ body {
 
 .sub-card {
   background: #fff;
-  color: #345b70;
+  color: $deep-blue;
 
 }
 
 .main-card {
-  background: #345b70;
-  color: #fff;
+  background: $deep-blue;
+  color: $my-white;
 }
 .login-text {
   color: #0e3042;
@@ -78,8 +97,8 @@ body {
   text-align: center;
 }
 .btn, .btn-large {
-  background-color: #345b70;
-  color: #fff;
+  background-color: $deep-blue;
+  color: $my-white;
   cursor: pointer;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -87,7 +106,7 @@ body {
 }
 
 nav ul a {
-  color: #345b70;
+  color: deep-blue;
   font-family: Gabriola;
   font-size: 25px;
   font-weight: bold;
@@ -98,8 +117,8 @@ nav ul a {
 
 
 .edit-info{
-  background: #345b70;
-  color: #fff;
+  background: $deep-blue;
+  color: $my-white;
   margin-top: 10px;
   padding: 20px;
 }
@@ -109,24 +128,24 @@ nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul 
   margin-right: 15px;
 }
 a.waves-effect.waves-light.btn.inner {
-    color: #345b70;
-    background: #fff;
+  background: $my-white;
+  color: deep-blue;
 }
 
 
 .content{
-    padding: 20px;
-    margin-top: -18px;
+  margin-top: -18px;
+  padding: 20px;
 }
 
 .fullbody {
-    background: url("http://12ot47uc0fw1m9rn2sc1ho10.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/hero7.jpg");
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    color: #fff;
-    padding: 40px;
-    position: relative;
+  background: url("http://12ot47uc0fw1m9rn2sc1ho10.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/hero7.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  color: $my-white;
+  padding: 40px;
+  position: relative;
 }
 
   .fullbody  > .overlay {
@@ -136,14 +155,14 @@ a.waves-effect.waves-light.btn.inner {
     left: 0;
     opacity: 0.30;
     position: absolute;
-    width: 100%;
     top: 0px;
+    width: 100%;
   }
 
 
   .collection .collection-item.avatar {
-    background: #345b70;
-    color: #fff;
+    background: $deep-blue;
+    color: $my-white;
     min-height: 84px;
     padding: 50px;
     position: relative;

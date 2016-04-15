@@ -3,7 +3,7 @@
 <div class="short-list">
 <ul class="collection with-header">
 <li><h5 class="login-text"><%= @user.name  %> Shortr Links </h5></li>
-<% @user.links.each do |link|%>
+<% @user_links.each do |link|%>
 <% if link.deleted != true %>
 <li class="collection-item">
 <%= link_to link_title(link), link_path(link), remote: true%>

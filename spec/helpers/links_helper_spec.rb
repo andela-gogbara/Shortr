@@ -2,6 +2,10 @@ require "rails_helper"
 
 RSpec.describe LinksHelper, type: :helper do
   let(:link) { create(:link) }
+  let(:user) { create(:user) }
+  before :each do
+    @helper = Object.new.extend LinksHelper
+  end
 
   describe "#link_title" do
     context "link has no valid title" do

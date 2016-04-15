@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  include LinksHelper
+  include UniquenessCheck
   before_action :authenticate_user!, only: [:edit, :destroy]
 
   def new
@@ -17,8 +17,8 @@ class LinksController < ApplicationController
   end
 
   def update
-    return if check_short_uniqueness_update
     @link = Link.find(params[:id])
+    return invalid_link_action if unique_link? && unique_vanity?(@link)
     if @link.update_attributes(link_params)
       flash[:success] = "Updated Successfully"
       redirect_to current_user
@@ -27,25 +27,18 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    return if check_short_uniqueness_create
+    return invalid_link_action if unique_link?
     @link.save
     get_title(@link.id)
     flash[:success] = "New shortr link created"
     flash[:link] = root_url + @link.short_url
-    new_create_redirect
+    redirect_user
   end
 
   def show
     @link = Link.find(params[:id])
     respond_to do |format|
       format.js { render :show_link }
-    end
-  end
-
-  def process_url
-    if params[:short_url]
-      @link = Link.find_by(short_url: params[:short_url])
-      check_active_delete
     end
   end
 
@@ -57,7 +50,7 @@ class LinksController < ApplicationController
     redirect_to current_user
   end
 
-  private
+  protected
 
   def link_params
     params.require(:link).permit(:full_url, :short_url, :active, :user_id)

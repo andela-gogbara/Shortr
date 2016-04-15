@@ -2,13 +2,14 @@ require "rails_helper"
 
 describe "API KEY", js: true do
   before(:all) do
-    @user = FactoryGirl.create(:user, password: "password")
-    current_user = @user.id
+    @user = create(:user, password: "password")
   end
+
   after(:all) do
     Link.destroy_all
     User.destroy_all
   end
+
   it "allows registered users to see their API Key" do
     login_helper(@user.email, "password")
     click_link("API KEY")

@@ -1,13 +1,16 @@
 <div class="edit-info">
 <h5><%= link_title(link) %></h5>
 <p><strong>Original Link: </strong><%= link.full_url %></p>
-<p><strong>Shortr Link: </strong><a href="<%= root_url + link.short_url %>"><%= root_url + link.short_url %></a></p>
+<p><strong>Shortr Link: </strong><a href="<%= root_url + link.short_url %>", target="_blank"><%= root_url + link.short_url %></a></p>
 <p><strong>Clicks: </strong><%= link.visit_count %></p>
 <p><strong>Status: </strong><%= link.active %></p>
 <div class="row">
-  <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn inner"%>
-  <%= link_to "DELETE", link_path(link), method: :delete, class: "waves-effect waves-light btn inner"%>
-  <a href="<%= root_url + link.short_url %>" id= "visit-link" class="waves-effect waves-light btn inner">Visit Link</a>
+  <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn copy-buttons"%>
+  <%= link_to "DELETE", link_path(link), method: :delete, class: "waves-effect waves-light btn copy-buttons"%>
+  <a href="<%= root_url + link.short_url %>" id= "visit-link" class="waves-effect waves-light btn copy-buttons", target="_blank">Visit Link</a>
+  <button class='waves-effect clip_button waves-light btn white-text copy-buttons' data-clipboard-text= "<%= root_url + link.short_url %>">
+  Copy Link
+  </button>
 </div>
 <table class="stripped ">
 
@@ -17,14 +20,13 @@
         <th data-field="name">IP Address</th>
         <th data-field="price">Browser</th>
         <th data-field="price">OS</th>
-        <!-- <th data-field="price">Referer</th> -->
         <th data-field="price">Time</th>
     </tr>
   </thead>
   <tbody>
     <% link.statistics.each_with_index do |stat, index| %>
     <tr>
-      <td><%= index %></td>
+      <td><%= index + 1 %></td>
       <td><%= stat.ip %></td>
       <td><%= stat.browser %></td>
       <td><%= stat.os %></td>
