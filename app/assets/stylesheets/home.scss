@@ -1,5 +1,6 @@
 $deep-blue: #345b70;
 $my-white: #ffffff;
+$box-shadow: #1e4f7d;
 
 * {
     font-family: 'Simonetta', cursive;
@@ -26,7 +27,7 @@ body {
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 0 -1px #1e4f7d;
+  box-shadow: 0 -1px $box-shadow;
   color: #fff !important;
   font-size: 13px;
 }
@@ -41,7 +42,7 @@ body {
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 0 -1px #1e4f7d;
+  box-shadow: 0 -1px $box-shadow;
   color: $deep-blue !important;
   font-size: 13px;
 }
@@ -127,8 +128,8 @@ nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul 
   margin-right: 15px;
 }
 a.waves-effect.waves-light.btn.inner {
-    color: deep-blue;
-    background: #fff;
+  color: deep-blue;
+  background: #fff;
 }
 
 
