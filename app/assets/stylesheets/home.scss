@@ -1,4 +1,4 @@
-$deep_blue: #345b70;
+$deep-blue: #345b70;
 
 * {
     font-family: 'Simonetta', cursive;
@@ -19,7 +19,7 @@ body {
 }
 
 .menu-buttons {
-  background: $deep_blue;
+  background: $deep-blue;
   border-color: #65d5ff #1d4e7b #173d5e #1f5482;
   border-image: none;
   border-radius: 3px;
@@ -31,7 +31,7 @@ body {
 }
 
 .menu-buttons:hover {
-  background: $deep_blue;
+  background: $deep-blue;
 }
 
 .copy-buttons {
@@ -41,17 +41,17 @@ body {
   border-style: solid;
   border-width: 1px;
   box-shadow: 0 -1px #1e4f7d;
-  color: $deep_blue !important;
+  color: $deep-blue !important;
   font-size: 13px;
 }
 
 .copy-buttons:hover {
-  background: $deep_blue;
+  background: $deep-blue;
 }
 
 .api-key {
   & button:focus {
-    background-color: $deep_blue;
+    background-color: $deep-blue;
   }
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .page-footer {
-  background: $deep_blue !important;
+  background: $deep-blue !important;
 }
 
 .footer-copyright {
@@ -77,7 +77,7 @@ body {
 
 .sub-card {
   background: #fff;
-  color: $deep_blue;
+  color: $deep-blue;
 
 }
 
@@ -95,7 +95,7 @@ body {
   text-align: center;
 }
 .btn, .btn-large {
-  background-color: $deep_blue;
+  background-color: $deep-blue;
   color: #fff;
   cursor: pointer;
   letter-spacing: .5px;
@@ -104,7 +104,7 @@ body {
 }
 
 nav ul a {
-  color: deep_blue;
+  color: deep-blue;
   font-family: Gabriola;
   font-size: 25px;
   font-weight: bold;
@@ -115,7 +115,7 @@ nav ul a {
 
 
 .edit-info{
-  background: $deep_blue;
+  background: $deep-blue;
   color: #fff;
   margin-top: 10px;
   padding: 20px;
@@ -126,7 +126,7 @@ nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul 
   margin-right: 15px;
 }
 a.waves-effect.waves-light.btn.inner {
-    color: deep_blue;
+    color: deep-blue;
     background: #fff;
 }
 
@@ -159,7 +159,7 @@ a.waves-effect.waves-light.btn.inner {
 
 
   .collection .collection-item.avatar {
-    background: $deep_blue;
+    background: $deep-blue;
     color: #fff;
     min-height: 84px;
     padding: 50px;
