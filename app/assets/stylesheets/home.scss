@@ -84,8 +84,8 @@ body {
 }
 
 .main-card {
-  background: #345b70;
-  color: #fff;
+  background: $deep-blue;
+  color: $my-white;
 }
 .login-text {
   color: #0e3042;
@@ -98,7 +98,7 @@ body {
 }
 .btn, .btn-large {
   background-color: $deep-blue;
-  color: #fff;
+  color: $my-white;
   cursor: pointer;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -118,7 +118,7 @@ nav ul a {
 
 .edit-info{
   background: $deep-blue;
-  color: #fff;
+  color: $my-white;
   margin-top: 10px;
   padding: 20px;
 }
@@ -128,14 +128,14 @@ nav ul a.btn, nav ul a.btn-large, nav ul a.btn-large, nav ul a.btn-flat, nav ul 
   margin-right: 15px;
 }
 a.waves-effect.waves-light.btn.inner {
+  background: $my-white;
   color: deep-blue;
-  background: #fff;
 }
 
 
 .content{
-    padding: 20px;
-    margin-top: -18px;
+  margin-top: -18px;
+  padding: 20px;
 }
 
 .fullbody {
@@ -143,7 +143,7 @@ a.waves-effect.waves-light.btn.inner {
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
-    color: #fff;
+    color: $my-white;
     padding: 40px;
     position: relative;
 }
@@ -155,14 +155,14 @@ a.waves-effect.waves-light.btn.inner {
     left: 0;
     opacity: 0.30;
     position: absolute;
-    width: 100%;
     top: 0px;
+    width: 100%;
   }
 
 
   .collection .collection-item.avatar {
     background: $deep-blue;
-    color: #fff;
+    color: $my-white;
     min-height: 84px;
     padding: 50px;
     position: relative;
