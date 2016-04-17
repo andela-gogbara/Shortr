@@ -1,4 +1,5 @@
 class RedirectController < ApplicationController
+  include UniquenessCheck
   def process_url
     if params[:short_url]
       @link = Link.find_by(short_url: params[:short_url])
