@@ -56,11 +56,12 @@ RSpec.describe LinksController, type: :controller, js: true do
     end
 
     context "with valid data" do
-      let(:valid_data) do attributes_for(
-        :link,
-        full_url: "full_url",
-        short_url: "short_url"
-      )
+      let(:valid_data) do
+        attributes_for(
+          :link,
+          full_url: "full_url",
+          short_url: "short_url"
+        )
       end
 
       before do
