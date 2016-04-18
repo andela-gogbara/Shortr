@@ -77,7 +77,7 @@ Sidekiq is used to handle background tasks, see https://github.com/mperham/sidek
 
 4. Commit changes made
 
-        $ git commit -a -m 'descriptive_message_about_change'
+        $ git commit -a -m "descriptive_message_about_change"
 
 5. Push to branch created
 

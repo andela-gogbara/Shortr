@@ -36,7 +36,7 @@ RSpec.describe Link, type: :model do
     end
   end
 
-  describe '#link_shortener' do
+  describe "#link_shortener" do
     it "returns a hexadecimal string" do
       link = Link.new
       expect(link.link_shortener.length).to eql 7

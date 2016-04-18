@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   scope :top_users, lambda {
-    User.includes(:links).order("links.visit_count desc").limit(5)
+    includes(:links).order("links.visit_count desc").limit(5)
   }
 
   def generate_api_key

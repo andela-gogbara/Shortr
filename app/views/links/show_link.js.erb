@@ -1,4 +1,4 @@
-$("#show-link").html("<%= j(render('links/show_link', :link => @link)) %>");
+$("#show-link").html("<%= j(render("links/show_link", :link => @link)) %>");
 $(document).ready(function(){
 	var clip = new ZeroClipboard($(".clip_button"));
 	$(".clip_button").click(function() {
