@@ -73,7 +73,9 @@ describe Api::LinksController do
       end
 
       it "should return no token error" do
-        expect(json["status_info"]).to eql("You need a valid API Key to update a link")
+        expect(json["status_info"]).to eql(
+          "You need a valid API Key to update a link"
+        )
       end
     end
 

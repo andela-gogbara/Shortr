@@ -2,22 +2,28 @@ $deep-blue: #345b70;
 $my-white: #ffffff;
 $box-shadow: #1e4f7d;
 
+
 * {
     font-family: 'Simonetta', cursive;
 }
-​
-body {
-  color: #fff;
-  font-family: 'Simonetta', cursive;
-  font-size: 14px;
-}
-
 
 .background {
   background: url("http://bit.ly/1Ma7Dzv");
   background-size: cover;
   height: auto;
   min-height: 100%;
+}
+
+.body-container {
+  min-height: 63vh;
+}
+
+.page-footer {
+  .container {
+    .row {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .menu-buttons {

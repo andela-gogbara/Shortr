@@ -8,7 +8,7 @@
   <%= link_to "EDIT", "#{link_path(link)}/edit", remote: true, class: "waves-effect waves-light btn copy-buttons"%>
   <%= link_to "DELETE", link_path(link), method: :delete, class: "waves-effect waves-light btn copy-buttons"%>
   <a href="<%= root_url + link.short_url %>" id= "visit-link" class="waves-effect waves-light btn copy-buttons", target="_blank">Visit Link</a>
-  <button class='waves-effect clip_button waves-light btn white-text copy-buttons' data-clipboard-text= "<%= root_url + link.short_url %>">
+  <button class="waves-effect clip_button waves-light btn white-text copy-buttons" data-clipboard-text= "<%= root_url + link.short_url %>">
   Copy Link
   </button>
 </div>

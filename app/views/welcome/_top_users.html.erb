@@ -5,7 +5,7 @@
     <div class="card sub-card">
       <div class="card-content">
         <p><strong><%= user.name%></strong></p>
-        <p>Links Count: <%= user.links.count %></p>
+        <p><strong>Points:</strong> <%= user.link_count %></p>
         <p><%= time_ago_in_words(user.created_at) %></p>
       </div>
     </div>
