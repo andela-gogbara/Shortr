@@ -2,6 +2,7 @@ $deep-blue: #345b70;
 $my-white: #ffffff;
 $box-shadow: #1e4f7d;
 
+
 * {
     font-family: 'Simonetta', cursive;
 }
@@ -14,16 +15,15 @@ $box-shadow: #1e4f7d;
 }
 
 .body-container {
-  flex: 1 0 auto;
+  min-height: 63vh;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Simonetta', cursive;
-  font-size: 14px;
-  height: 100vh;
-  margin: 0;
+.page-footer {
+  .container {
+    .row {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .menu-buttons {
@@ -173,11 +173,3 @@ a.waves-effect.waves-light.btn.inner {
     padding: 50px;
     position: relative;
   }
-
-  #show-link {
-    color: #300;
-  }
-
-  // .input-field label {
-  //   color: $my-white;
-  // }
