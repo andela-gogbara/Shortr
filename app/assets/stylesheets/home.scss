@@ -5,19 +5,25 @@ $box-shadow: #1e4f7d;
 * {
     font-family: 'Simonetta', cursive;
 }
-​
-body {
-  color: #fff;
-  font-family: 'Simonetta', cursive;
-  font-size: 14px;
-}
-
 
 .background {
   background: url("http://bit.ly/1Ma7Dzv");
   background-size: cover;
   height: auto;
   min-height: 100%;
+}
+
+.body-container {
+  flex: 1 0 auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Simonetta', cursive;
+  font-size: 14px;
+  height: 100vh;
+  margin: 0;
 }
 
 .menu-buttons {
@@ -167,3 +173,11 @@ a.waves-effect.waves-light.btn.inner {
     padding: 50px;
     position: relative;
   }
+
+  #show-link {
+    color: #300;
+  }
+
+  // .input-field label {
+  //   color: $my-white;
+  // }
