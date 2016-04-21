@@ -31,7 +31,8 @@ class UsersController < ApplicationController
       :name,
       :email,
       :password,
-      :password_confirmation, :api_key
+      :password_confirmation,
+      :api_key
     )
   end
 end

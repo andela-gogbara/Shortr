@@ -12,11 +12,11 @@ describe Api::LinksController do
         create_request("http://facebook.com")
       end
 
-      it "expected a success message" do
+      it "should expect a success message" do
         expect(json["status_info"]).to eq("Successfully created new short")
       end
 
-      it "should return status code" do
+      it "should return a 200 status code" do
         expect(response.response_code).to eq(200)
       end
     end
@@ -30,7 +30,7 @@ describe Api::LinksController do
         expect(json["status_info"]).to eq("Successfully created new short")
       end
 
-      it "should return status code" do
+      it "should return a 200 status code" do
         expect(response.response_code).to eq(200)
       end
 
@@ -43,7 +43,7 @@ describe Api::LinksController do
       end
     end
 
-    context "link to shorten no valid" do
+    context "link to shorten not valid" do
       before do
         post :create, link: { full_url: "http:facebook.com" }, format: :json
         create_request("http:facebook.com")
@@ -54,11 +54,13 @@ describe Api::LinksController do
       end
     end
 
-    context "Vanity string already exist" do
+    context "vanity string already exist" do
       before do
-        post :create, link: { full_url: "http://facebook.com",
-                              short_url: "short",
-                              api_key: @user.api_key }, format: :json
+        post :create, link: {
+          full_url: "http://facebook.com",
+          short_url: "short",
+          api_key: @user.api_key
+        }, format: :json
       end
       it "should show error message if vanity exist" do
         expect(json["status_info"]).to eq("Could not create new short")
