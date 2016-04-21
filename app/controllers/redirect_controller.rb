@@ -22,7 +22,7 @@ class RedirectController < ApplicationController
   end
 
   def user_points
-    user = User.find(@link.user)
+    user = User.find(@link.user.id)
     new_link_count = user.link_count + 1
     user.update_columns(link_count: new_link_count)
   end

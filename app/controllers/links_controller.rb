@@ -28,7 +28,6 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     return invalid_link_action if unique_link?
-    # binding.pry
     @link.save
     get_title(@link.id)
     flash[:success] = "New shortr link created"
