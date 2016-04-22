@@ -1,6 +1,7 @@
 $deep-blue: #345b70;
 $my-white: #ffffff;
 $box-shadow: #1e4f7d;
+$my-blue: #2bbbad;
 
 
 * {
@@ -175,5 +176,5 @@ a.waves-effect.waves-light.btn.inner {
   }
 
 .input-field label {
-  color: #2bbbad;
+  color: $my-blue;
 }
